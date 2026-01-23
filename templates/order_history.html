@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Orders</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='order_history.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+</head>
+<body>
+  <header>
+<nav class="navbar">
+    <div class="logo">
+        <a href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='logo.jpeg') }}">
+        </a>
+        Nature Craft Store
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </div>
+    <ul class="nav-links" id="navLinks">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+                            <a href="{{ url_for('cart') }}">🛒 Cart <span id="cart-count">0</span></a>
+            </li>
+            <li><a href="{{ url_for('account') }}">👤</a></li>
+</nav>
+</header>
+<h2 class="page-title">My Orders</h2>
+
+{% if history %}
+  {% for order in history %}
+  <div class="order-card" id="order-{{ order.order_id }}">
+
+    <div class="order-header">
+      <div>
+        <strong>Order ID:</strong> {{ order.order_id }}<br>
+        <span class="date">Placed on {{ order.created_at }}</span>
+      </div>
+      <div class="status {{ order.status|lower }}">
+        {{ order.status }}
+      </div>
+    </div>
+
+    <!-- ITEMS -->
+    {% for item in order.order_items %}
+    <div class="order-item">
+      <img src="{{ url_for('static', filename=item.image) }}" alt="{{ item.name }}">
+      <div class="details">
+        <h4>{{ item.name }}</h4>
+        <p>Qty: {{ item.quantity }}</p>
+        <p>₹ {{ item.price }}</p>
+      </div>
+    </div>
+    {% endfor %}
+
+    <!-- FOOTER -->
+    <div class="order-footer">
+      <strong>Total: ₹ {{ order.total }}</strong>
+
+      <div class="actions">
+        <button onclick="trackOrder('{{ order.order_id }}')">Track Order</button>
+
+        {% if order.status != 'CANCELLED' %}
+        <button class="cancel"
+                onclick="cancelOrder('{{ order.order_id }}')">
+          Cancel Order
+        </button>
+        {% endif %}
+      </div>
+    </div>
+
+    <!-- Tracking Timeline -->
+    <div class="timeline" id="timeline-{{ order.order_id }}" style="display:none;">
+      <div class="step done">Order Placed</div>
+      <div class="step {% if order.status in ['SHIPPED','DELIVERED'] %}done{% endif %}">Shipped</div>
+      <div class="step {% if order.status == 'DELIVERED' %}done{% endif %}">Delivered</div>
+    </div>
+
+  </div>
+  {% endfor %}
+{% else %}
+  <p class="empty">No orders found.</p>
+{% endif %}
+
+<div id="chatButton">💬 Chat</div>
+
+<div id="chatPopup">
+    <div class="chat-header">
+         <a href="home.html"><img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Nature Craft Store Logo"></a> Nature Craft Store 
+        <button id="closeChat">✖</button>
+    </div>
+
+    <div class="chat-box" id="chatBox"></div>
+
+    <div class="chat-buttons" id="chatButtons"></div>
+
+    <div class="chat-input">
+        <input type="text" id="userMessage" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <div class="contact-links">
+        <p>📞 <a href="tel:+919876543210">Call: +91 98765 43210</a></p>
+        <p>📧 <a href="mailto:support@naturecraft.com">Email: support@naturecraft.com</a></p>
+        <button onclick="clearChat()" class="clear-chat-btn">Clear Chat</button>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='order_history.js') }}"></script>
+
+<script src="{{ url_for('static', filename='contact.js') }}"></script>
+</body>
+</html>

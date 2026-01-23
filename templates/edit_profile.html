@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='edit_profile.css') }}">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <a href="{{ url_for('account') }}">
+            <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Logo">
+        </a>
+        Nature Craft Store
+    </div>
+</header>
+
+<div class="form-container">
+    <h2>Edit Profile</h2>
+
+    <form method="POST">
+
+        <input type="text" name="username"
+               value="{{ user['username'] }}" required>
+
+        <input type="tel" name="phone"
+               value="{{ user['phone'] }}" required>
+
+        <!-- Email shown but not editable -->
+        <input type="email" value="{{ user['email'] }}" disabled>
+
+        <input type="date" name="dob"
+               value="{{ user['dob'] }}" required>
+
+        <select name="gender" required>
+            <option value="Male" {{ 'selected' if user['gender']=='Male' }}>Male</option>
+            <option value="Female" {{ 'selected' if user['gender']=='Female' }}>Female</option>
+            <option value="Other" {{ 'selected' if user['gender']=='Other' }}>Other</option>
+        </select>
+
+        <button type="submit">Update Profile</button>
+    </form>
+
+    <br>
+    <a href="{{ url_for('account') }}">⬅ Back to Account</a>
+</div>
+
+</body>
+</html>

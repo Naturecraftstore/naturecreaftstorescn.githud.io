@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nature Craft Store - Products</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{ url_for('static', filename='product.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="{{ url_for('home') }}">
+        <img src="{{ url_for('static', filename='logo.jpeg') }}">
+      </a>
+      Nature Craft Store
+    </div>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links">
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('handmade') }}">Handmade Craft</a></li>
+      <li><a href="{{url_for('organic')}}">Organic Beauty</a></li>
+      <li><a href="{{url_for('products')}}">Fashion</a></li>
+      <li><a href="{{ url_for('cart') }}">🛒 Cart <span id="cart-count">0</span></a></li>
+      <li><a href="{{url_for('account')}}">👤</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+<main>
+<div class="product-grid">
+
+<!-- ================= PRODUCT LIST ================= -->
+
+<!-- 1 -->
+<div class="product-card">
+<a href="{{ url_for('product2_detail', product_id='H001') }}">
+<img src="{{ url_for('static', filename='images3/fr1a.jpg') }}">
+</a>
+<h3>Formal Shirt</h3>
+<p>Men's Cotton Rich Formal Shirt | Plain | Full Sleeve</p>
+<p class="price">₹599</p>
+<p class="rating">⭐ 4.2 / 5</p>
+<button onclick="addToCart('H001','Formal Shirt',599,'images3/fr1a.jpg','⭐4.2','size-H001')">Add to Cart</button>
+<button onclick="buyNow('H001','Formal Shirt',599,'images3/fr1a.jpg','⭐4.2','size-H001')">Buy Now</button>
+</div>
+
+<!-- 2 -->
+<div class="product-card">
+<a href="{{ url_for('product2_detail', product_id='H002') }}">
+<img src="{{ url_for('static', filename='images3/ja.jpg') }}">
+</a>
+<h3>Cotton Jacket</h3>
+<p>Premium men jackets || bomber jacket for men || Lightweight Outwear Sportswear Bomber Jacket</p>
+<p class="price">₹₹749.99</p>
+<p class="rating">⭐ 4.6 / 5</p>
+<button onclick="addToCart('H002','Jacket',749.99,'images3/ja.jpg','⭐4.6','size-H002')">Add to Cart</button>
+<button onclick="buyNow('H002','Jacket',749.99,'images3/ja.jpg','⭐4.6','size-H002')">Buy Now</button>
+</div>
+
+<!-- 3 -->
+<div class="product-card">
+<a href="{{ url_for('product2_detail', product_id='H003') }}">
+<img src="{{ url_for('static', filename='images3/sa.jpg') }}">
+</a>
+<h3>Printed Half Sleeve Shirt</h3>
+<p>Trendy Regular Fit Printed Half Sleeve Shirt for Men </p>
+<p class="price">₹499.99</p>
+<p class="rating">⭐ 4.5 / 5</p>
+<button onclick="addToCart('H003','Printed Half Sleeve Shirt',499.99,'images3/sa.jpg','⭐4.5','size-H003')">Add to Cart</button>
+<button onclick="buyNow('H003','Printed Half Sleeve Shirt',499.99,'images3/sa.jpg','⭐4.5','size-H003')">Buy Now</button>
+</div>
+
+<!-- 4 -->
+<div class="product-card">
+<a href="{{ url_for('product2_detail', product_id='H004') }}">
+<img src="{{ url_for('static', filename='images3/pa.jpg') }}">
+</a>
+<h3>Cargo Pant</h3>
+<p>Cotton Cargo Pants for Men || Regular Fit High Rise Solid Pants </p>
+<p class="price">₹749</p>
+<p class="rating">⭐ 4.5 / 5</p>
+<button onclick="addToCart('H004','Cargo Pant',749,'images3/pa.jpg','⭐4.5','size-H004')">Add to Cart</button>
+<button onclick="buyNow('H004','Cargo Pant',749,'images3/pa.jpg','⭐4.5','size-H004')">Buy Now</button>
+</div>
+
+<!-- 5 -->
+<div class="product-card">
+<a href="{{ url_for('product2_detail', product_id='H005') }}">
+<img src="{{ url_for('static', filename='images3/pu1.jpg') }}">
+</a>
+<h3>Hoodie for Men</h3>
+<p>Hoodie for Men|Sweatshirt for Man Stylish | Hooded (Sweatshirt) for Mans| Winter Wear for Mans </p>
+<p class="price">₹599</p>
+<p class="rating">⭐ 4.4 / 5</p>
+<button onclick="addToCart('H005','Hoodie for Men',599,'images3/pu1.jpg','⭐4.4','size-H005')">Add to Cart</button>
+<button onclick="buyNow('H005','Hoodie for Men',599,'images3/pu1.jpg','⭐4.4','size-H005')">Buy Now</button>
+</div>
+
+<!-- 6 -->
+<div class="product-card">
+<a href="{{ url_for('product2_detail', product_id='H006') }}">
+<img src="{{ url_for('static', filename='images3/kua.jpg') }}">
+</a>
+<h3>Ethnic Wear Kurta Pajama Set</h3>
+<p>Ethnic Wear Kurta Pajama Set </p>
+<p class="price">₹649</p>
+<p class="rating">⭐ 4.7 / 5</p>
+<button onclick="addToCart('H006','Ethnic Wear Kurta Pajama Set',649,'images3/kua.jpg','⭐4.7','size-H006')">Add to Cart</button>
+<button onclick="buyNow('H006','Ethnic Wear Kurta Pajama Set',649,'images3/kua.jpg','⭐4.7','size-H006')">Buy Now</button>
+</div>
+
+<!-- 7 -->
+<div class="product-card">
+<a href="{{ url_for('product2_detail', product_id='H007') }}">
+<img src="{{ url_for('static', filename='images3/dhoti1.jpg') }}">
+</a>
+<h3> Dhoti Set</h3>
+<p>Men's Traditional Indian Shirt and Dhoti Set</p>
+<p class="price">₹1299</p>
+<p class="rating">⭐ 4.4 / 5</p>
+<button onclick="addToCart('H007','Dhoti Set',1299,'images3/dhoti1.jpg','⭐4.4','size-H007')">Add to Cart</button>
+<button onclick="buyNow('H007','Dhoti Set',1299,'images3/dhoti1.jpg','⭐4.4','size-H007')">Buy Now</button>
+</div>
+
+<!-- 8 -->
+<div class="product-card">
+<a href="{{ url_for('product2_detail', product_id='H008') }}">
+<img src="{{ url_for('static', filename='images3/sweatshirt1.jpg') }}">
+</a>
+<h3>Sweatshirts</h3>
+<p>Material compositionWool Blend </p>
+<p class="price">₹599</p>
+<p class="rating">⭐ 4.4 / 5</p>
+<button onclick="addToCart('H008','Sweatshirts',599,'images3/sweatshirt2.jpg','⭐4.4','size-H008')">Add to Cart</button>
+<button onclick="buyNow('H008','Sweatshirts',599,'images3/sweatshirt2.jpg','⭐4.4','size-H008')">Buy Now</button>
+</div>
+
+<!-- 9 -->
+<div class="product-card">
+<a href="{{ url_for('product2_detail', product_id='H009') }}">
+<img src="{{ url_for('static', filename='images3/shirt1.jpg') }}">
+</a>
+<h3>Men's Formal Button Down Shirt</h3>
+<p>Men's Formal Button Down Shirt – Slim Fit Shirt's for Men </p>
+<p class="price">₹499</p>
+<p class="rating">⭐ 4.6 / 5</p>
+<button onclick="addToCart('H009','Men's Formal Button Down Shirt',499,'images3/shirt1.jpg','⭐4.6','size-H009')">Add to Cart</button>
+<button onclick="buyNow('H009','Men's Formal Button Down Shirt',499,'images3/shirt1.jpg','⭐4.6','size-H009')">Buy Now</button>
+</div>
+
+<!-- 10 -->
+<div class="product-card">
+<a href="{{ url_for('product2_detail', product_id='H010') }}">
+<img src="{{ url_for('static', filename='images3/pant3.jpg') }}">
+</a>
+<h3>Flip Pocket Jeans</h3>
+<p>  Men Loose Fit Men's Flip Pocket Jeans || Mens Stylish Cotton Loose Fit Denim Cargo</p>
+<p class="price">₹799</p>
+<p class="rating">⭐ 4.6 / 5</p>
+<button onclick="addToCart('H010','Flip Pocket Jeans',799,'images3/pant3.jpg','⭐4.6','size-H010')">Add to Cart</button>
+<button onclick="buyNow('H010','Flip Pocket Jeans',799,'images3/pant3.jpg','⭐4.6','size-H010')">Buy Now</button>
+</div>
+
+<!-- 11 -->
+<div class="product-card">
+<a href="{{ url_for('product2_detail', product_id='H020') }}">
+<img src="{{ url_for('static', filename='images3/image10a.jpg') }}">
+</a>
+<h3>Mens Jeans Shirt</h3>
+<p>Premium quality fabric.</p>
+<p class="price">₹800</p>
+<p class="rating">⭐ 4.8 / 5</p>
+<div class="product-buttons">
+ <button onclick="addToCart('H020','Mens Jeans Shirt', 800,'images3/image10a.jpg','⭐ 4.6','size-H020')">
+      Add to Cart
+    </button>
+    <button onclick="buyNow('H020','Mens Jeans Shirt',800,'images3/image10a.jpg','⭐ 4.6','size-H020')">
+      Buy Now
+    </button>
+  </div>
+</div>
+
+<!-- 12 -->
+<div class="product-card">
+<a href="{{ url_for('product2_detail', product_id='H019') }}">
+<img src="{{ url_for('static', filename='images3/image9a.jpg') }}">
+</a>
+<h3>Mens short kurta</h3>
+<p>Perfect for festivals, weddings, family functions .</p>
+<p class="price">₹1200</p>
+<p class="rating">⭐ 4.6 / 5</p>
+<div class="product-buttons">
+  <button onclick="addToCart('H019','Mens short kurta', 1200,'images3/image9a.jpg','⭐ 4.6','size-H019')">
+      Add to Cart
+    </button>
+    <button onclick="buyNow('H019','Mens short kurta',1200,'images3/image9a.jpg','⭐ 4.6','size-H019')">
+      Buy Now
+    </button>
+
+  </div>
+</div>
+
+<!-- 13 -->
+<div class="product-card">
+<a href="{{ url_for('product2_detail', product_id='H018') }}">
+<img src="{{ url_for('static', filename='images3/image8a.jpg') }}">
+</a>
+<h3>Mens short kurta</h3>
+<p>breathable fabric for all-day comfort.</p>
+<p class="price">₹1500</p>
+<p class="rating">⭐ 4.6 / 5</p>
+<div class="product-buttons">
+           <button onclick="addToCart('H018','Mens short kurta', 1500,'images3/image8a.jpg','⭐ 4.6','size-H018')">
+      Add to Cart
+    </button>
+    <button onclick="buyNow('H018','Mens short kurta',1500,'images3/image8a.jpg','⭐ 4.6','size-H018')">
+      Buy Now
+    </button>
+
+  </div>
+</div>
+
+<!-- 14 -->
+<div class="product-card">
+<a href="{{ url_for('product2_detail', product_id='H017') }}">
+<img src="{{ url_for('static', filename='images3/image7a.jpg') }}">
+</a>
+<h3>Kurta Pajama</h3>
+<p>family functions, and ethnic occasions.</p>
+<p class="price">₹2500</p>
+<p class="rating">⭐ 4.6 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('H017','Kurta-Pajama', 2500,'images3/image7a.jpg','⭐ 4.6','size-H017')">
+      Add to Cart
+    </button>
+    <button onclick="buyNow('H017','Kurta-Pajama',2500,'images3/image7a.jpg','⭐ 4.6','size-H017')">
+      Buy Now
+    </button>
+
+</div>
+</div>
+
+<!-- 15 -->
+<div class="product-card">
+<a href="{{ url_for('product2_detail', product_id='H016') }}">
+<img src="{{ url_for('static', filename='images3/image6a.jpg') }}">
+</a>
+<h3>Kurta-Pajama</h3>
+<p> Elegant mens kurta pajama crafted from soft</p>
+<p class="price">₹1500</p>
+<p class="rating">⭐ 4.2 / 5</p>
+<div class="product-buttons">
+           <button onclick="addToCart('H016','Kurta-Pajama', 1500,'images3/image6a.jpg','⭐ 4.2','size-H016')">
+      Add to Cart
+    </button>
+    <button onclick="buyNow('H016','Kurta-Pajama',1500,'images3/image6a.jpg','⭐ 4.2','size-H016')">
+      Buy Now
+    </button>
+
+  </div>
+</div>
+<!-- 16 -->
+<div class="product-card">
+<a href="{{ url_for('product2_detail', product_id='H015') }}">
+<img src="{{ url_for('static', filename='images3/image5a.jpg') }}">
+</a>
+<h3>Men's Cotton Dhotis</h3>
+<p>Compact sling bag</p>
+<p class="price">₹1000</p>
+<p class="rating">⭐ 4.8 / 5</p>
+<div class="product-buttons">
+          <button onclick="addToCart('H015','Mens Cotton Dhotis', 1000,'images3/image5a.jpg','⭐ 4.8','size-H015')">
+      Add to Cart
+    </button>
+    <button onclick="buyNow('H015','Mens Cotton Dhotis',1000,'images3/image5a.jpg','⭐ 4.8','size-H015')">
+      Buy Now
+    </button>
+
+        </div>
+</div>
+<!-- 17 -->
+<!--- <div class="product-card">
+<a href="{{ url_for('product2_detail', product_id='H014') }}">
+<img src="{{ url_for('static', filename='images3/image4a.jpg') }}">
+</a>
+<h3>Mens Cotton Dhotis</h3>
+<p>finished with a soft touch for all-day comfort.</p>
+<p class="price">₹800</p>
+<p class="rating">⭐ 4.6 / 5</p>
+          <div class="product-buttons">
+          <button onclick="addToCart('H014','Mens Cotton Dhotis', 800,'images3/image4a.jpg','⭐4.6','size-H014')">
+      Add to Cart
+    </button>
+    <button onclick="buyNow('H014','Mens Cotton Dhotis',800,'images3/image4a.jpg','⭐4.6','size-H014')">
+      Buy Now
+    </button>
+
+        </div>
+</div> -->
+
+<!-- 18 -->
+<div class="product-card">
+<a href="{{ url_for('product2_detail', product_id='H013') }}">
+<img src="{{ url_for('static', filename='images3/image3a.jpg') }}">
+</a>
+<h3>Men's T Shirt</h3>
+<p>Soft, breathable 100% cotton fil-a-fil fabric with subtle texture.</p>
+<p class="price">₹600</p>
+<p class="rating">⭐ 4.5 / 5</p>
+ <div class="product-buttons">
+<button onclick="addToCart('H013','Men T Shirt',600,'images3/image3a.jpg','⭐ 4.5','size-H013')">
+      Add to Cart
+    </button>
+    <button onclick="buyNow('H013','Men T Shirt',600,'images3/image3a.jpg','⭐ 4.5','size-H013')">
+      Buy Now
+    </button>
+
+  </div>
+</div>
+
+<!-- 19 -->
+<div class="product-card">
+<a href="{{ url_for('product2_detail', product_id='H012') }}">
+<img src="{{ url_for('static', filename='images3/image2a.jpg') }}">
+</a>
+<h3>Kurta-Pajama</h3>
+<p> Elegant mens kurta pajama crafted from soft</p>
+<p class="price">₹1500</p>
+<p class="rating">⭐ 4.7 / 5</p>
+<div class="product-buttons">
+          <button onclick="addToCart('H012','Kurta-Pajama',1500,'images3/image2a.jpg','⭐ 4.7','size-H012')">
+      Add to Cart
+    </button>
+    <button onclick="buyNow('H012','Kurta-Pajama',1500,'images3/image2a.jpg','⭐ 4.7','size-H012')">
+      Buy Now
+    </button>
+
+        </div>
+      </div>
+<!-- 20 -->
+<div class="product-card">
+<a href="{{ url_for('product2_detail', product_id='H011') }}">
+<img src="{{ url_for('static', filename='images3/image1a.jpg') }}">
+</a>
+<h3>Men's T Shirt</h3>
+<p>Soft, breathable 100% cotton fil-a-fil fabric with subtle texture.</p>
+<p class="price">₹467</p>
+<p class="rating">⭐ 4.4 / 5</p>
+<div class="product-buttons">
+          <button onclick="addToCart('H011','Men T Shirt',467,'images3/image1a.jpg','⭐ 4.4','size-H011')">
+      Add to Cart
+    </button>
+    <button onclick="buyNow('H011','Men T Shirt',467,'images3/image1a.jpg','⭐ 4.4','size-H011')">
+      Buy Now
+    </button>
+
+        </div>
+</div>
+
+</div>
+</main>
+
+<!-- ================= FLOATING CHAT ================= -->
+<div id="chatButton">💬 Chat</div>
+
+<div id="chatPopup">
+    <div class="chat-header">
+         <a href="home.html"><img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Nature Craft Store Logo"></a> Nature Craft Store 
+        <button id="closeChat">✖</button>
+    </div>
+
+    <div class="chat-box" id="chatBox"></div>
+
+    <div class="chat-buttons" id="chatButtons"></div>
+
+    <div class="chat-input">
+        <input type="text" id="userMessage" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <div class="contact-links">
+        <p>📞 <a href="tel:+919876543210">Call: +91 98765 43210</a></p>
+        <p>📧 <a href="mailto:support@naturecraft.com">Email: support@naturecraft.com</a></p>
+        <button onclick="clearChat()" class="clear-chat-btn">Clear Chat</button>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='product1.js') }}"></script>
+<script src="{{ url_for('static', filename='contact.js') }}"></script>
+
+</body>
+</html>

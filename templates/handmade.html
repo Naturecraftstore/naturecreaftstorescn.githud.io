@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nature Craft Store - Products</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{ url_for('static', filename='product.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="{{ url_for('home') }}">
+        <img src="{{ url_for('static', filename='logo.jpeg') }}">
+      </a>
+      Nature Craft Store
+    </div>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('handmade') }}">Handmade Craft</a></li>
+      <li><a href="{{url_for('organic')}}">Organic Beauty</a></li>
+      <li><a href="{{url_for('products')}}">Fashion</a></li>
+      <li><a href="{{ url_for('cart') }}">🛒 Cart <span id="cart-count">0</span></a></li>
+      <li><a href="{{url_for('account')}}">👤</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+<main>
+<div class="product-grid">
+
+<!-- ================= PRODUCT LIST ================= -->
+
+<!-- 1 -->
+<div class="product-card">
+<a href="{{ url_for('handmade_detail', product_id='P001') }}">
+<img src="{{ url_for('static', filename='images1/bag1.png') }}">
+</a>
+<h3>Handmade Bag</h3>
+<p>Beautiful Handmade Bag</p>
+<p class="price">₹210</p>
+<p class="rating">⭐ 4.2 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('P001','Handmade Bag',210,'images1/bag1.png','⭐4.2')">Add to Cart</button>
+<button onclick="buyNow('P001','Handmade Bag',210,'images1/bag1.png','⭐4.2')">Buy Now</button>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="product-card">
+<a href="{{ url_for('handmade_detail', product_id='P002') }}">
+<img src="{{ url_for('static', filename='images1/bag4.jpg') }}">
+</a>
+<h3>Cotton Handmade Bag</h3>
+<p>Premium multicolour bag</p>
+<p class="price">₹359.9</p>
+<p class="rating">⭐ 4.6 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('P002','Cotton Handmade Bag',359.9,'images1/bag4.jpg','⭐4.6')">Add to Cart</button>
+<button onclick="buyNow('P002','Cotton Handmade Bag',359.9,'images1/bag4.jpg','⭐4.6')">Buy Now</button>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="product-card">
+<a href="{{ url_for('handmade_detail', product_id='P003') }}">
+<img src="{{ url_for('static', filename='images1/purse3.webp') }}">
+</a>
+<h3>Purse</h3>
+<p>Handcrafted purse</p>
+<p class="price">₹299</p>
+<p class="rating">⭐ 4.5 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('P003','Purse',299,'images1/purse3.webp','⭐4.5')">Add to Cart</button>
+<button onclick="buyNow('P003','Purse',299,'images1/purse3.webp','⭐4.5')">Buy Now</button>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="product-card">
+<a href="{{ url_for('handmade_detail', product_id='P004') }}">
+<img src="{{ url_for('static', filename='images1/sling bag6.webp') }}">
+</a>
+<h3>Sling Bag</h3>
+<p>Traditional sling bag</p>
+<p class="price">₹249</p>
+<p class="rating">⭐ 4.6 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('P004','Sling Bag',249,'images1/sling bag6.webp','⭐4.6')">Add to Cart</button>
+<button onclick="buyNow('P004','Sling Bag',249,'images1/sling bag6.webp','⭐4.6')">Buy Now</button>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="product-card">
+<a href="{{ url_for('handmade_detail', product_id='P005') }}">
+<img src="{{ url_for('static', filename='images1/purse8.jpg') }}">
+</a>
+<h3>Multicolour Purse</h3>
+<p>Eco-friendly jute purse</p>
+<p class="price">₹349</p>
+<p class="rating">⭐ 4.4 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('P005','Multicolour Purse',349,'images1/purse8.jpg','⭐4.4')">Add to Cart</button>
+<button onclick="buyNow('P005','Multicolour Purse',349,'images1/purse8.jpg','⭐4.4')">Buy Now</button>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="product-card">
+<a href="{{ url_for('handmade_detail', product_id='P006') }}">
+<img src="{{ url_for('static', filename='images1/earnings5.jpg') }}">
+</a>
+<h3>Handmade Earring</h3>
+<p>Thread earring</p>
+<p class="price">₹230</p>
+<p class="rating">⭐ 4.4 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('P006','Handmade Earring',230,'images1/earnings5.jpg','⭐4.4')">Add to Cart</button>
+<button onclick="buyNow('P006','Handmade Earring',230,'images1/earnings5.jpg','⭐4.4')">Buy Now</button>
+</div>
+</div>
+
+<!-- 7 -->
+<div class="product-card">
+<a href="{{ url_for('handmade_detail', product_id='P007') }}">
+<img src="{{ url_for('static', filename='images1/slingbag 7.jpg') }}">
+</a>
+<h3>Sling Bag</h3>
+<p>Eco-friendly sling bag</p>
+<p class="price">₹467</p>
+<p class="rating">⭐ 4.4 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('P007','Sling Bag',467,'images1/slingbag 7.jpg','⭐4.4')">Add to Cart</button>
+<button onclick="buyNow('P007','Sling Bag',467,'images1/slingbag 7.jpg','⭐4.4')">Buy Now</button>
+</div>
+</div>
+
+<!-- 8 -->
+<div class="product-card">
+<a href="{{ url_for('handmade_detail', product_id='P008') }}">
+<img src="{{ url_for('static', filename='images1/earning7.jpg') }}">
+</a>
+<h3>Jhumka</h3>
+<p>Multicolour jhumka</p>
+<p class="price">₹798.9</p>
+<p class="rating">⭐ 4.4 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('P008','Jhumka',798.9,'images1/earning7.jpg','⭐4.4')">Add to Cart</button>
+<button onclick="buyNow('P008','Jhumka',798.9,'images1/earning7.jpg','⭐4.4')">Buy Now</button>
+</div>
+</div>
+
+<!-- 9 -->
+<div class="product-card">
+<a href="{{ url_for('handmade_detail', product_id='P009') }}">
+<img src="{{ url_for('static', filename='images1/bangle5.jpg') }}">
+</a>
+<h3>Handmade Bangles</h3>
+<p>Decorative bangles</p>
+<p class="price">₹249</p>
+<p class="rating">⭐ 4.6 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('P009','Handmade Bangles',249,'images1/bangle5.jpg','⭐4.6')">Add to Cart</button>
+<button onclick="buyNow('P009','Handmade Bangles',249,'images1/bangle5.jpg','⭐4.6')">Buy Now</button>
+</div>
+</div>
+
+<!-- 10 -->
+<div class="product-card">
+<a href="{{ url_for('handmade_detail', product_id='P010') }}">
+<img src="{{ url_for('static', filename='images1/bangle6.jpg') }}">
+</a>
+<h3>Bangle</h3>
+<p>Stylish bangle</p>
+<p class="price">₹478</p>
+<p class="rating">⭐ 4.3 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('P010','Bangle',478,'images1/bangle6.jpg','⭐4.3')">Add to Cart</button>
+<button onclick="buyNow('P010','Bangle',478,'images1/bangle6.jpg','⭐4.3')">Buy Now</button>
+</div>
+</div>
+
+<!-- 11 -->
+<div class="product-card">
+<a href="{{ url_for('handmade_detail', product_id='P011') }}">
+<img src="{{ url_for('static', filename='images1/bangle7.jpg') }}">
+</a>
+<h3>Thread Bangle</h3>
+<p>Thread work bangle</p>
+<p class="price">₹216.99</p>
+<p class="rating">⭐ 4.8 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('P011','Thread Bangle',216.99,'images1/bangle7.jpg','⭐4.8')">Add to Cart</button>
+<button onclick="buyNow('P011','Thread Bangle',216.99,'images1/bangle7.jpg','⭐4.8')">Buy Now</button>
+</div>
+</div>
+
+<!-- 12 -->
+<div class="product-card">
+<a href="{{ url_for('handmade_detail', product_id='P012') }}">
+<img src="{{ url_for('static', filename='images1/pattren1b.jpg') }}">
+</a>
+<h3>Handmade Saree</h3>
+<p>Traditional handcrafted saree</p>
+<p class="price">₹1199.99</p>
+<p class="rating">⭐ 4.6 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('P012','Handmade Saree',1199.99,'images1/pattren1b.jpg','⭐4.6')">Add to Cart</button>
+<button onclick="buyNow('P012','Handmade Saree',1199.99,'images1/pattren1b.jpg','⭐4.6')">Buy Now</button>
+</div>
+</div>
+
+<!-- 13 -->
+<div class="product-card">
+<a href="{{ url_for('handmade_detail', product_id='P013') }}">
+<img src="{{ url_for('static', filename='images1/pat6a.jpg') }}">
+</a>
+<h3>Smooth Saree</h3>
+<p>Elegant handmade saree</p>
+<p class="price">₹699.9</p>
+<p class="rating">⭐ 4.1 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('P013','Smooth Saree',699.9,'images1/pat6a.jpg','⭐4.1')">Add to Cart</button>
+<button onclick="buyNow('P013','Smooth Saree',699.9,'images1/pat6a.jpg','⭐4.1')">Buy Now</button>
+</div>
+</div>
+
+<!-- 14 -->
+<div class="product-card">
+<a href="{{ url_for('handmade_detail', product_id='P014') }}">
+<img src="{{ url_for('static', filename='images1/pat 3a.jpg') }}">
+</a>
+<h3>Cotton Saree</h3>
+<p>Soft cotton saree</p>
+<p class="price">₹2110</p>
+<p class="rating">⭐ 4.2 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('P014','Cotton Saree',2110,'images1/pat 3a.jpg','⭐4.2')">Add to Cart</button>
+<button onclick="buyNow('P014','Cotton Saree',2110,'images1/pat 3a.jpg','⭐4.2')">Buy Now</button>
+</div>
+</div>
+
+<!-- 15 -->
+<div class="product-card">
+<a href="{{ url_for('handmade_detail', product_id='P015') }}">
+<img src="{{ url_for('static', filename='images1/pat5a.jpg') }}">
+</a>
+<h3>Modern Saree</h3>
+<p>Elegant modern saree</p>
+<p class="price">₹2299</p>
+<p class="rating">⭐ 4.7 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('P015','Modern Saree',2299,'images1/pat5a.jpg','⭐4.7')">Add to Cart</button>
+<button onclick="buyNow('P015','Modern Saree',2299,'images1/pat5a.jpg','⭐4.7')">Buy Now</button>
+</div>
+</div>
+
+<!-- 16 -->
+<div class="product-card">
+<a href="{{ url_for('handmade_detail', product_id='P016') }}">
+<img src="{{ url_for('static', filename='images1/sling bag3.jpg') }}">
+</a>
+<h3>Beats Sling Bag</h3>
+<p>Compact sling bag</p>
+<p class="price">₹349</p>
+<p class="rating">⭐ 4.6 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('P016','Beats Sling Bag',349,'images1/sling bag3.jpg','⭐4.6')">Add to Cart</button>
+<button onclick="buyNow('P016','Beats Sling Bag',349,'images1/sling bag3.jpg','⭐4.6')">Buy Now</button>
+</div>
+</div>
+
+</div>
+</main>
+<div id="chatButton">💬 Chat</div>
+
+<div id="chatPopup">
+    <div class="chat-header">
+         <a href="home.html"><img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Nature Craft Store Logo"></a> Nature Craft Store 
+        <button id="closeChat">✖</button>
+    </div>
+
+    <div class="chat-box" id="chatBox"></div>
+
+    <div class="chat-buttons" id="chatButtons"></div>
+
+    <div class="chat-input">
+        <input type="text" id="userMessage" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <div class="contact-links">
+        <p>📞 <a href="tel:+919876543210">Call: +91 98765 43210</a></p>
+        <p>📧 <a href="mailto:support@naturecraft.com">Email: support@naturecraft.com</a></p>
+        <button onclick="clearChat()" class="clear-chat-btn">Clear Chat</button>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='product1.js') }}"></script>
+<script src="{{ url_for('static', filename='contact.js') }}"></script>
+
+</body>
+</html>

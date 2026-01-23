@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Payment | Nature Craft Store</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='payment.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+</head>
+
+<body>
+
+<header>
+<nav class="navbar">
+    <div class="logo">
+        <a href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='logo.jpeg') }}">
+        </a>
+        Nature Craft Store
+    </div>
+</nav>
+</header>
+
+<!-- ORDER SUMMARY -->
+<div class="summary">
+  <h2>🛒 Order Summary</h2>
+
+  {% for item in items %}
+  <div class="product-item">
+    <img src="{{ url_for('static', filename=item.image) }}">
+    <div>
+      <p class="product-name">{{ item.name }}</p>
+      <p class="product-qty">Qty: {{ item.qty }}</p>
+      <p class="product-price">₹{{ item.price * item.qty }}</p>
+    </div>
+  </div>
+  {% endfor %}
+
+  <p><strong>Total:</strong> ₹{{ total }}</p>
+</div>
+
+<!-- PAYMENT FORM -->
+<form id="paymentForm">
+  <!-- ADDRESS -->
+  <div class="address">
+    <input type="text" id="name" placeholder="Full Name" required>
+    <input type="text" id="mobile" placeholder="Mobile Number" required>
+    <textarea id="address" placeholder="House No, Street, Area"></textarea>
+    <textarea id="village" placeholder="Village"></textarea>
+    <textarea id="mandal" placeholder="Mandal"></textarea>
+    <input type="number" id="pincode" placeholder="PIN Code" onkeyup="getAddress()">
+    <input type="text" id="city" placeholder="City" readonly>
+    <input type="text" id="district" placeholder="District" readonly>
+    <input type="text" id="state" placeholder="State" readonly>
+  </div>
+
+  <!-- PAYMENT METHOD -->
+  <div class="payment">
+    <label><input type="radio" name="payment" checked onclick="showCard()"> Card</label>
+    <label><input type="radio" name="payment" onclick="showUPI()"> UPI</label>
+    <label><input type="radio" name="payment" onclick="hideAll()"> Cash on Delivery</label>
+
+    <div id="cardBox">
+      <input type="text" placeholder="Card Number">
+      <input type="text" placeholder="Card Holder">
+      <input type="text" placeholder="MM/YY">
+      <input type="password" placeholder="CVV">
+    </div>
+
+    <div id="upiBox" style="display:none">
+      <input type="text" placeholder="UPI ID">
+    </div>
+
+    <button type="submit" id="payBtn" disabled>Pay Now</button>
+    <p id="msg" style="color:red"></p>
+  </div>
+</form>
+
+<script src="{{ url_for('static', filename='payment.js') }}"></script>
+</body>
+</html>

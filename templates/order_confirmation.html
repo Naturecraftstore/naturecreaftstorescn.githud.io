@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Order Confirmation | Nature Craft Store</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+</head>
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="{{ url_for('home') }}">
+        <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Nature Craft Store">
+      </a>
+      Nature Craft Store
+    </div>
+  </nav>
+</header>
+
+<div class="container">
+
+  <h2>🎉 Order Placed Successfully!</h2>
+
+  <div class="order-info">
+    <p>Order ID: <strong id="orderId" data-order-id="{{ order.order_id }}">{{ order.order_id }}</strong></p>
+    <p>Ordered on: {{ order.created_at }}</p>
+  </div>
+
+  <div class="items" id="itemsContainer">
+    <!-- JS will dynamically insert items here -->
+  </div>
+
+  <div class="total">
+    <strong>Total Paid:</strong> <span id="totalAmount">₹0</span>
+  </div>
+
+  <div class="address">
+    <h3>📦 Delivery Address</h3>
+    <p>{{ order.name }}</p>
+    <p>{{ order.address }}</p>
+    <p>{{ order.city }}, {{ order.state }} - {{ order.pincode }}</p>
+    <p>📞 {{ order.mobile }}</p>
+  </div>
+
+  <a href="{{ url_for('home') }}" class="btn-home">Continue Shopping</a>
+
+</div>
+<div id="chatButton">💬 Chat</div>
+
+<div id="chatPopup">
+    <div class="chat-header">
+        <img src="{{ url_for('static', filename='logo.jpeg') }}">
+        Nature Craft Store
+        <button id="closeChat">✖</button>
+    </div>
+
+    <div class="chat-box" id="chatBox"></div>
+    <div class="chat-buttons" id="chatButtons"></div>
+
+    <div class="chat-input">
+        <input type="text" id="userMessage" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='contact.js') }}"></script>
+<script src="{{ url_for('static', filename='order_confirmation.js') }}"></script>
+</body>
+</html>

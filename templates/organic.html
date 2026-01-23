@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nature Craft Store - Organic Beauty</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='product.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="{{ url_for('home') }}">
+        <img src="{{ url_for('static', filename='logo.jpeg') }}">
+      </a>
+      Nature Craft Store
+    </div>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <ul class="nav-links">
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('handmade') }}">Handmade Craft</a></li>
+      <li><a href="{{url_for('organic')}}">Organic Beauty</a></li>
+      <li><a href="{{url_for('products')}}">Fashion</a></li>
+      <li><a href="{{ url_for('cart') }}">🛒 Cart <span id="cart-count">0</span></a></li>
+      <li><a href="{{url_for('account')}}">👤</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+<main>
+<div class="product-grid">
+
+<!-- ================= PRODUCTS ================= -->
+
+<!-- 1 -->
+<div class="product-card">
+<a href="{{ url_for('organic_detail', product_id='OB01') }}">
+<img src="{{ url_for('static', filename='images2/AS1.png') }}">
+</a>
+<h3>Aloe Vera Soap</h3>
+<p class="price">₹199.99</p>
+<p class="rating">⭐ 4.2 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('OB01','Aloe Vera Soap',199.99,'images2/AS1.png','⭐4.2')">Add to Cart</button>
+<button onclick="buyNow('OB01','Aloe Vera Soap',199.99,'images2/AS1.png','⭐4.2')">Buy Now</button>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="product-card">
+<a href="{{ url_for('organic_detail', product_id='OB02') }}">
+<img src="{{ url_for('static', filename='images2/AS11.jpeg') }}">
+</a>
+<h3>Aloe Vera Shampoo</h3>
+<p class="price">₹320</p>
+<p class="rating">⭐ 4.6 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('OB02','Aloe Vera Shampoo',320,'images2/AS11.jpeg','⭐4.6')">Add to Cart</button>
+<button onclick="buyNow('OB02','Aloe Vera Shampoo',320,'images2/AS11.jpeg','⭐4.6')">Buy Now</button>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="product-card">
+<a href="{{ url_for('organic_detail', product_id='OB03') }}">
+<img src="{{ url_for('static', filename='images2/HS1.png') }}">
+</a>
+<h3>Hibiscus Shampoo</h3>
+<p class="price">₹399</p>
+<p class="rating">⭐ 4.4 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('OB03','Hibiscus Shampoo',399,'images2/HS1.png','⭐4.4')">Add to Cart</button>
+<button onclick="buyNow('OB03','Hibiscus Shampoo',399,'images2/HS1.png','⭐4.4')">Buy Now</button>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="product-card">
+<a href="{{ url_for('organic_detail', product_id='OB04') }}">
+<img src="{{ url_for('static', filename='images2/LS1.png') }}">
+</a>
+<h3>Lavender Bliss Soap</h3>
+<p class="price">₹259</p>
+<p class="rating">⭐ 4.5 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('OB04','Lavender Bliss Soap',259,'images2/LS1.png','⭐4.5')">Add to Cart</button>
+<button onclick="buyNow('OB04','Lavender Bliss Soap',259,'images2/LS1.png','⭐4.5')">Buy Now</button>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="product-card">
+<a href="{{ url_for('organic_detail', product_id='OB05') }}">
+<img src="{{ url_for('static', filename='images2/mc1.jpeg') }}">
+</a>
+<h3>Meethi Seeds & Curry Leaves Hair Oil</h3>
+<p class="price">₹249</p>
+<p class="rating">⭐ 4.4 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('OB05','Nourish & Shine Hair Oil',249,'images2/mc1.jpeg','⭐4.4')">Add to Cart</button>
+<button onclick="buyNow('OB05','Nourish & Shine Hair Oil',249,'images2/mc1.jpeg','⭐4.4')">Buy Now</button>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="product-card">
+<a href="{{ url_for('organic_detail', product_id='OB06') }}">
+<img src="{{ url_for('static', filename='images2/RS1.jpeg') }}">
+</a>
+<h3>Rose Bliss Soap</h3>
+<p class="price">₹299</p>
+<p class="rating">⭐ 4.3 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('OB06','Rose Bliss Soap',299,'images2/RS1.jpeg','⭐4.3')">Add to Cart</button>
+<button onclick="buyNow('OB06','Rose Bliss Soap',299,'images2/RS1.jpeg','⭐4.3')">Buy Now</button>
+</div>
+</div>
+
+<!-- 7 -->
+<div class="product-card">
+<a href="{{ url_for('organic_detail', product_id='OB07') }}">
+<img src="{{ url_for('static', filename='images2/TS1.jpeg') }}">
+</a>
+<h3>Turmeric Glow Soap</h3>
+<p class="price">₹349</p>
+<p class="rating">⭐ 4.6 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('OB07','Turmeric Glow Soap',349,'images2/TS1.jpeg','⭐4.6')">Add to Cart</button>
+<button onclick="buyNow('OB07','Turmeric Glow Soap',349,'images2/TS1.jpeg','⭐4.6')">Buy Now</button>
+</div>
+</div>
+
+<!-- 8 -->
+<div class="product-card">
+<a href="{{ url_for('organic_detail', product_id='OB08') }}">
+<img src="{{ url_for('static', filename='images2/mr1.jpeg') }}">
+</a>
+<h3>Meethi Seeds & Rosemary Hair Oil</h3>
+<p class="price">₹699</p>
+<p class="rating">⭐ 4.1 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('OB08','Meethi Seeds & Rosemary Hair Oil',699,'images2/mr1.jpeg','⭐4.1')">Add to Cart</button>
+<button onclick="buyNow('OB08','Meethi Seeds & Rosemary Hair Oil',699,'images2/mr1.jpeg','⭐4.1')">Buy Now</button>
+</div>
+</div>
+
+<!-- 9 -->
+<div class="product-card">
+<a href="{{ url_for('organic_detail', product_id='OB09') }}">
+<img src="{{ url_for('static', filename='images2/l1.jpeg') }}">
+</a>
+<h3>Lemon Brightening Face Pack</h3>
+<p class="price">₹249</p>
+<p class="rating">⭐ 4.4 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('OB09','Lemon Brightening Face Pack',249,'images2/l1.jpeg','⭐4.4')">Add to Cart</button>
+<button onclick="buyNow('OB09','Lemon Brightening Face Pack',249,'images2/l1.jpeg','⭐4.4')">Buy Now</button>
+</div>
+</div>
+
+<!-- 10 -->
+<div class="product-card">
+<a href="{{ url_for('organic_detail', product_id='OB10') }}">
+<img src="{{ url_for('static', filename='images2/on1.jpeg') }}">
+</a>
+<h3>Orange & Neem Face Pack</h3>
+<p class="price">₹399</p>
+<p class="rating">⭐ 4.2 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('OB10','Orange & Neem Face Pack',399,'images2/on1.jpeg','⭐4.2')">Add to Cart</button>
+<button onclick="buyNow('OB10','Orange & Neem Face Pack',399,'images2/on1.jpeg','⭐4.2')">Buy Now</button>
+</div>
+</div>
+
+<!-- 11 -->
+<div class="product-card">
+<a href="{{ url_for('organic_detail', product_id='OB11') }}">
+<img src="{{ url_for('static', filename='images2/OS1.jpeg') }}">
+</a>
+<h3>Onion Shampoo</h3>
+<p class="price">₹349</p>
+<p class="rating">⭐ 4.2 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('OB11','Onion Shampoo',349,'images2/OS1.jpeg','⭐4.2')">Add to Cart</button>
+<button onclick="buyNow('OB11','Onion Shampoo',349,'images2/OS1.jpeg','⭐4.2')">Buy Now</button>
+</div>
+</div>
+
+<!-- 12 -->
+<div class="product-card">
+<a href="{{ url_for('organic_detail', product_id='OB12') }}">
+<img src="{{ url_for('static', filename='images2/ro1.jpeg') }}">
+</a>
+<h3>Rose Hair Oil</h3>
+<p class="price">₹429</p>
+<p class="rating">⭐ 4.3 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('OB12','Rose Hair Oil',429,'images2/ro1.jpeg','⭐4.3')">Add to Cart</button>
+<button onclick="buyNow('OB12','Rose Hair Oil',429,'images2/ro1.jpeg','⭐4.3')">Buy Now</button>
+</div>
+</div>
+
+<!-- 13 -->
+<div class="product-card">
+<a href="{{ url_for('organic_detail', product_id='OB13') }}">
+<img src="{{ url_for('static', filename='images2/mm1.jpeg') }}">
+</a>
+<h3>Multani Mitti Face Pack</h3>
+<p class="price">₹399</p>
+<p class="rating">⭐ 4.1 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('OB13','Multani Mitti Face Pack',399,'images2/mm1.jpeg','⭐4.1')">Add to Cart</button>
+<button onclick="buyNow('OB13','Multani Mitti Face Pack',399,'images2/mm1.jpeg','⭐4.1')">Buy Now</button>
+</div>
+</div>
+
+<!-- 14 -->
+<div class="product-card">
+<a href="{{ url_for('organic_detail', product_id='OB14') }}">
+<img src="{{ url_for('static', filename='images2/rp1.jpeg') }}">
+</a>
+<h3>Rose Powder Face Pack</h3>
+<p class="price">₹349</p>
+<p class="rating">⭐ 4.5 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('OB14','Rose Powder Face Pack',349,'images2/rp1.jpeg','⭐4.5')">Add to Cart</button>
+<button onclick="buyNow('OB14','Rose Powder Face Pack',349,'images2/rp1.jpeg','⭐4.5')">Buy Now</button>
+</div>
+</div>
+
+<!-- 15 -->
+<div class="product-card">
+<a href="{{ url_for('organic_detail', product_id='OB15') }}">
+<img src="{{ url_for('static', filename='images2/NS1.png') }}">
+</a>
+<h3>Neem Shampoo</h3>
+<p class="price">₹199</p>
+<p class="rating">⭐ 4.3 / 5</p>
+<div class="product-buttons">
+<button onclick="addToCart('OB15','Neem Shampoo',199,'images2/NS1.png','⭐4.3')">Add to Cart</button>
+<button onclick="buyNow('OB15','Neem Shampoo',199,'images2/NS1.png','⭐4.3')">Buy Now</button>
+</div>
+</div>
+
+</div>
+</main>
+<div id="chatButton">💬 Chat</div>
+
+<div id="chatPopup">
+    <div class="chat-header">
+         <a href="home.html"><img src="{{ url_for('static', filename='logo.jpeg') }}"alt="Nature Craft Store Logo"></a> Nature Craft Store 
+        <button id="closeChat">✖</button>
+    </div>
+
+    <div class="chat-box" id="chatBox"></div>
+
+    <div class="chat-buttons" id="chatButtons"></div>
+
+    <div class="chat-input">
+        <input type="text" id="userMessage" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <div class="contact-links">
+        <p>📞 <a href="tel:+919876543210">Call: +91 98765 43210</a></p>
+        <p>📧 <a href="mailto:support@naturecraft.com">Email: support@naturecraft.com</a></p>
+        <button onclick="clearChat()" class="clear-chat-btn">Clear Chat</button>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='product1.js') }}"></script>
+
+<script src="{{ url_for('static', filename='contact.js') }}" defer></script>
+</body>
+</html>

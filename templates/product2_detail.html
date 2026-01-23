@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nature Craft Store - Products</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{ url_for('static', filename='product_detail.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="{{ url_for('home') }}">
+        <img src="{{ url_for('static', filename='logo.jpeg') }}">
+      </a>
+      Nature Craft Store
+    </div>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <ul class="nav-links">
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('handmade') }}">Handmade Craft</a></li>
+      <li><a href="{{url_for('organic')}}">Organic Beauty</a></li>
+      <li><a href="{{url_for('products')}}">Fashion</a></li>
+      <li><a href="{{ url_for('cart') }}">🛒 Cart <span id="cart-count">0</span></a></li>
+      <li><a href="{{url_for('account')}}">👤</a></li>
+      
+    </ul>
+  </nav>
+</header>
+<div class="container">
+    <!-- PRODUCT 1 -->
+  <div class="product-box" id="H001">
+  <div class="product-images">
+    <img src="{{ url_for('static', filename='images3/fr1a.jpg') }}" class="main-image" id="main-H001">
+    <div class="thumbnails">
+            <img src="{{ url_for('static', filename='images3/fr1a.jpg') }}" class="thumb active" onclick="changeImage('H001', this)">
+            <img src="{{ url_for('static', filename='images3/fr1b.jpg') }}" class="thumb active" onclick="changeImage('H001', this)">
+            <img src="{{ url_for('static', filename='images3/fr1c.jpg') }}" class="thumb active" onclick="changeImage('H001', this)">
+
+    </div>
+  </div>
+  <div class="details">
+    <h2>Formal Shirt</h2>
+    <p><strong>Price:</strong> ₹599.00</p>
+    <p><strong>Description:</strong> <b>Men's Cotton Rich Formal Shirt | Plain | Full Sleeve</b> <br>
+      FABRIC: Soft, breathable 100% cotton fil-a-fil fabric with subtle texture, finished with a soft touch for all-day comfort.
+ Regular fit shirt featuring short sleeves, classic collar and single chest pocket.
+WORKMANSHIP: Crafted with high quality stitching and German interlining ensuring durability and a clean finish.
+STYLE TIPS: Pair with formal trousers and for timeless elegance. For special occasions, elevate the look with a blazer.</p>
+    <p><strong>Product Details:</strong> <br>
+
+      Material composition75% Cotton, 25% Polyester <br>
+      PatternSolid <br>
+      Fit typeRegular Fit <br>
+      Sleeve typeLong Sleeve <br>
+      Collar styleClassic Collar <br>
+      LengthStandard Length <br>
+      Country of OriginIndia</p>
+  </div>
+   <div class="size-selector">
+  <strong>Size:</strong><br>
+  <label><input type="radio" name="size-H001" value="S"> S</label>
+  <label><input type="radio" name="size-H001" value="M"> M</label>
+  <label><input type="radio" name="size-H001" value="L"> L</label>
+  <label><input type="radio" name="size-H001" value="XL"> XL</label>
+  <label><input type="radio" name="size-H001" value="XXL"> XXL</label>
+  <label><input type="radio" name="size-H001" value="XXXL"> XXXL</label>
+</div>
+  <div class="actions">
+    <div class="rating">★ ★ ★ ★ ☆</div>
+    <div class="rating-value">⭐ 4.2 / 5</div>
+  <button onclick="addToCart('H001','Formal Shirt',599,'images3/fr1a.jpg','⭐4.2','size-H001')">Add to Cart</button>
+<button onclick="buyNow('H001','Formal Shirt',599,'images3/fr1a.jpg','⭐4.2','size-H001')">Buy Now</button>
+
+</div>
+</div>
+
+  <!-- PRODUCT 2 -->
+  <div class="product-box" id="H002">
+  <div class="product-images">
+    <img src="{{ url_for('static', filename='images3/ja.jpg')}}" class="main-image" id="main-H002">
+    <div class="thumbnails">
+      <img src="{{ url_for('static', filename='images3/ja.jpg') }}" class="thumb active" onclick="changeImage('H002', this)">
+      <img src="{{ url_for('static', filename='images3/jb.jpg') }}" class="thumb active" onclick="changeImage('H002', this)">
+      <img src="{{ url_for('static', filename='images3/jc.jpg') }}" class="thumb active" onclick="changeImage('H002', this)">
+
+    </div>
+  </div>
+  <div class="details">
+    <h2>Jacket</h2>
+    <p><strong>Price:</strong> ₹749.99</p>
+    <p><strong>Description:</strong> <b>|| Jacket for men ||</b>|| <br>
+      *About this item <br>
+      men jackets || bomber jacket for men || Lightweight Outwear Sportswear Bomber Jacket
+      Type:Bomber
+      Sleeve Length:Long Sleeve
+      Fit Type:Regular Fit </p>
+
+    <p> <strong>Product Details <br> </strong> 
+  Material compositionPolyester <br>
+  StyleBomber Jacket <br>
+  Fit typeRegular <br>
+  LengthStandard Length <br>
+  PatternSolid <br>
+</div>
+ <div class="size-selector">
+  <strong>Size:</strong><br>
+  <label><input type="radio" name="size-H002" value="S"> S</label>
+  <label><input type="radio" name="size-H002" value="M"> M</label>
+  <label><input type="radio" name="size-H002" value="L"> L</label>
+  <label><input type="radio" name="size-H002" value="XL"> XL</label>
+  <label><input type="radio" name="size-H002" value="XXL"> XXL</label>
+  <label><input type="radio" name="size-H002" value="XXXL"> XXXL</label>
+</div>
+  <div class="actions">
+    <div class="rating">★ ★ ★ ★ ☆</div>
+    <div class="rating-value">⭐ 4.6 / 5</div>
+    <button onclick="addToCart('H002','Jacket',749.99,'images3/ja.jpg','⭐4.6','size-H002')">Add to Cart</button>
+    <button onclick="buyNow('H002','Jacket',749.99,'images3/ja.jpg','⭐4.6','size-H002')">Buy Now</button>
+  </div>
+</div>
+
+
+<!-- PRODUCT 3 -->
+  <div class="product-box" id="H003">
+  <div class="product-images">
+    <img src="{{ url_for('static', filename='images3/sa.jpg')}}" class="main-image" id="main-H003">
+    <div class="thumbnails">
+      <img src="{{ url_for('static', filename='images3/sa.jpg') }}" class="thumb active" onclick="changeImage('H003', this)">
+      <img src="{{ url_for('static', filename='images3/sb.jpg') }}" class="thumb active" onclick="changeImage('H003', this)">
+      <img src="{{ url_for('static', filename='images3/sc.jpg') }}" class="thumb active" onclick="changeImage('H003', this)">
+    </div>
+  </div>
+  <div class="details">
+    <h2>Printed Half Sleeve Shirt</h2>
+    <p><strong>Price:</strong> ₹499.99</p>
+    <p><strong>Description:</strong> Trendy Regular Fit Printed Half Sleeve Shirt for Men <br> Superior Quality
+Wrinkle Free. Great for Casual or Party or Work
+Men Shirts.
+Best value , Stretchable , Breathable , Maintenance free , trigene fabric , Soil Resistant
+    </p>
+    <p><strong>Product Details <br></strong> 
+      Material compositionCottonblend <br>
+      Fit typeRegular Fit <br>
+      Sleeve typeShort Sleeve <br>
+      Collar styleSpread Collar <br>
+      Neck styleCollared Neck <br>
+      StyleWestern 
+      </p>
+  </div>
+  <div class="size-selector">
+  <strong>Size:</strong><br>
+  <label><input type="radio" name="size-H003" value="S"> S</label>
+  <label><input type="radio" name="size-H003" value="M"> M</label>
+  <label><input type="radio" name="size-H003" value="L"> L</label>
+  <label><input type="radio" name="size-H003" value="XL"> XL</label>
+  <label><input type="radio" name="size-H003" value="XXL"> XXL</label>
+  <label><input type="radio" name="size-H003" value="XXXL"> XXXL</label>
+</div>
+  <div class="actions">
+    <div class="rating">★ ★ ★ ★ ☆</div>
+    <div class="rating-value">⭐ 4.5 / 5</div>
+    <button onclick="addToCart('H003','Printed Half Sleeve Shirt',499.99,'images3/sa.jpg','⭐4.5','size-H003')">Add to Cart</button>
+<button onclick="buyNow('H003','Printed Half Sleeve Shirt',499,'images3/sa.jpg','⭐4.5','size-H003')">Buy Now</button>
+</div>
+
+  </div>
+</div>
+
+
+  <!-- PRODUCT 4 -->
+  <div class="product-box" id="H004">
+  <div class="product-images">
+    <img src="{{ url_for('static', filename='images3/pa.jpg')}}" class="main-image" id="main-H004">
+    <div class="thumbnails">
+      <img src="{{ url_for('static', filename='images3/pa.jpg') }}" class="thumb active" onclick="changeImage('H004', this)">
+      <img src="{{ url_for('static', filename='images3/pb.jpg') }}" class="thumb active" onclick="changeImage('H004', this)">
+      <img src="{{ url_for('static', filename='images3/pc.jpg') }}" class="thumb active" onclick="changeImage('H004', this)">
+
+    </div>
+    </div>
+  <div class="details">
+    <h2>Cargo Pant</h2>
+    <p><strong>Price:</strong> ₹749</p>
+    <p><strong>Description:</strong> Cotton Cargo Pants for Men || Regular Fit High Rise Solid Pants </p>
+    <p><strong>Product Detail</strong> *Unique & Handmade <br>
+      Men Cargo || Men Cargo Pants || Men Cargo Pants Cotton || Cargos for Men <br>
+      Pattern Type: Plain <br>
+      Type: Cargo Pants <br>
+      Closure Type: Drawstring Waist <br>
+      Length: Long</p>
+  </div>
+  <div class="size-selector">
+  <strong>Waist Size:</strong><br>
+  <label><input type="radio" name="size-H004" value="28"> 28</label>
+  <label><input type="radio" name="size-H004" value="30"> 30</label>
+  <label><input type="radio" name="size-H004" value="32"> 32</label>
+  <label><input type="radio" name="size-H004" value="34"> 34</label>
+  <label><input type="radio" name="size-H004" value="36"> 36</label>
+  <label><input type="radio" name="size-H004" value="38"> 38</label>
+</div>
+  <div class="actions">
+    <div class="rating">★ ★ ★ ★ ☆</div>
+    <div class="rating-value">⭐ 4.5 / 5</div>
+    <button onclick="addToCart('H004','Cargo Pant',749,'images3/pa.jpg','⭐4.5','size-H004')">Add to Cart</button>
+<button onclick="buyNow('H004','Cargo Pant',749,'images3/pa.jpg','⭐4.5','size-H004')">Buy Now</button>
+</div>
+</div>
+
+  <!-- PRODUCT 5 -->
+  <div class="product-box" id="H005">
+  <div class="product-images">
+    <img src="{{ url_for('static', filename='images3/pu1.jpg')}}" class="main-image" id="main-H005">
+    <div class="thumbnails">
+      <img src="{{ url_for('static', filename='images3/pu1.jpg') }}" class="thumb active" onclick="changeImage('H005', this)">
+      <img src="{{ url_for('static', filename='images3/pu2.jpg') }}" class="thumb active" onclick="changeImage('H005', this)">
+      <img src="{{ url_for('static', filename='images3/pu3.jpg') }}" class="thumb active" onclick="changeImage('H005', this)">
+
+    </div>
+  </div>
+  <div class="details">
+    <h2>Hoodie for Men</h2>
+    <p><strong>Price:</strong> ₹599</p>
+    <p><strong>Description:</strong> Hoodie for Men|Sweatshirt for Man Stylish | Hooded (Sweatshirt) for Mans| Winter Wear for Mans <br>
+      Neckline: Round Neck, Details:Pullover, Sleeve Length: Full Sleeve, Sleeve Type: Regular Sleeve,Length: Regular, Fit Type: Regular Fit</p>
+      <p><strong>Product Detail <br></strong>
+      Material composition5 % Stretchable , Composition: 95 % Polyster <br>
+      Sleeve typeLong Sleeve <br>
+      Material typeFlee <br>
+      Fit typeRegular <br>
+      LengthStandard Length <br>
+      Neck styleRound Neck
+      </p>
+  </div>
+  <div class="size-selector">
+  <strong>Size:</strong><br>
+  <label><input type="radio" name="size-H005" value="S"> S</label>
+  <label><input type="radio" name="size-H005" value="M"> M</label>
+  <label><input type="radio" name="size-H005" value="L"> L</label>
+  <label><input type="radio" name="size-H005" value="XL"> XL</label>
+  <label><input type="radio" name="size-H005" value="XXL"> XXL</label>
+  <label><input type="radio" name="size-H005" value="XXXL"> XXXL</label>
+</div>
+  <div class="actions">
+    <div class="rating">★ ★ ★ ★ ☆</div>
+    <div class="rating-value">⭐ 4.4 / 5</div>
+    <button onclick="addToCart('H005','Hoodie for Men',599,'images3/pu1.jpg','⭐4.4','size-H005')">Add to Cart</button>
+<button onclick="buyNow('H005','Hoodie for Men',599,'images3/pu1.jpg','⭐4.4','size-H005')">Buy Now</button>
+</div>
+</div>
+
+
+   <!-- PRODUCT 6 -->
+  <div class="product-box" id="H006">
+  <div class="product-images">
+    <img src="{{ url_for('static', filename='images3/kua.jpg')}}" class="main-image" id="main-H006">
+    <div class="thumbnails">
+      <img src="{{ url_for('static', filename='images3/kua.jpg') }}" class="thumb active" onclick="changeImage('H006', this)">
+      <img src="{{ url_for('static', filename='images3/kub.jpg') }}" class="thumb active" onclick="changeImage('H006', this)">
+      <img src="{{ url_for('static', filename='images3/kuc.jpg') }}" class="thumb active" onclick="changeImage('H006', this)">
+
+    </div>
+  </div>
+  <div class="details">
+    <h2>Ethnic Wear Kurta Pajama Set</h2>
+    <p><strong>Price:</strong> ₹649</p>
+    <p><strong> <b>Description:</b></strong>Ethnic Wear Kurta Pajama Set <br>
+      Elegant Party Wear Kurta Set for Men: Designed for celebrations, this stylish kurta pajama set for men combines traditional charm with modern aesthetics, making it perfect for weddings, festive events, and formal gatherings.
+Soft and Breathable Cotton: Crafted from premium cotton, this kurta set ensures breathability and all-day comfort. The lightweight fabric keeps you cool, making it an ideal cotton men kurta set during summer or spring functions.</p>
+    <p><strong> Product Detail<b></b> </strong>
+    Material typeCotton <br>
+    Fit typeRelaxed <br>
+    Style Classic <br>
+    Closure typePull On <br>
+    Care instructionsMachine Wash <br>
+    Age range descriptionAdult</p>
+  </div>
+  <div class="size-selector">
+  <strong>Size:</strong><br>
+  <label><input type="radio" name="size-H006" value="S"> S</label>
+  <label><input type="radio" name="size-H006" value="M"> M</label>
+  <label><input type="radio" name="size-H006" value="L"> L</label>
+  <label><input type="radio" name="size-H006" value="XL"> XL</label>
+  <label><input type="radio" name="size-H006" value="XXL"> XXL</label>
+  <label><input type="radio" name="size-H006" value="XXXL"> XXXL</label>
+</div>
+  <div class="actions">
+    <div class="rating">★ ★ ★ ★ ☆</div>
+    <div class="rating-value">⭐ 4.7 / 5</div>
+   <button onclick="addToCart('H006','Ethnic Wear Kurta Pajama Set',649,'images3/kua.jpg','⭐4.7','size-H006')">Add to Cart</button>
+<button onclick="buyNow('H006','Ethnic Wear Kurta Pajama Set',649,'images3/kua.jpg','⭐4.7','size-H006')">Buy Now</button>
+</div>
+
+  </div>
+</div>
+
+  <!-- PRODUCT 7 -->
+  <div class="product-box" id="H007">
+  <div class="product-images">
+    <img src="{{ url_for('static', filename='images3/dhoti1.jpg')}}" class="main-image" id="main-H007">
+    <div class="thumbnails">
+      <img src="{{ url_for('static', filename='images3/dhoti1.jpg') }}" class="thumb active" onclick="changeImage('H007', this)">
+      <img src="{{ url_for('static', filename='images3/dhoti2.jpg') }}" class="thumb active" onclick="changeImage('H007', this)">
+      <img src="{{ url_for('static', filename='images3/dhoti3.jpg') }}" class="thumb active" onclick="changeImage('H007', this)">
+
+    </div>
+  </div>
+  <div class="details">
+    <h2>Men's Traditional Indian Shirt and Dhoti Set</h2>
+    <p><strong>Price:</strong> ₹1299</p>
+    <p><strong>Description:</strong> Men's Traditional Indian Shirt and Dhoti Set, Full Sleeves Tissue Silk Cotton Shirt With Dhoti 2 metres for men,
+       Traditional Ethnic Wear for Men  This half-sleeve shirt with a mandarin collar pairs with a 4-meter double dhoti, giving a classic South Indian look.
+       Perfect for Festivals & Weddings – Ideal for Diwali, Pongal, Onam, temple visits, pujas, and other religious or festive occasions.</p>
+    <p><strong><b>Product Detail</b></strong> <br>
+     Care instructionsMachine Wash <br>
+     Sleeve typeLong sleeve <br>
+    Closure typeButton</p>
+  </div>
+  <div class="size-selector">
+  <strong>Size:</strong><br>
+  <label><input type="radio" name="size-H007" value="S"> S</label>
+  <label><input type="radio" name="size-H007" value="M"> M</label>
+  <label><input type="radio" name="size-H007" value="L"> L</label>
+  <label><input type="radio" name="size-H007" value="XL"> XL</label>
+  <label><input type="radio" name="size-H007" value="XXL"> XXL</label>
+  <label><input type="radio" name="size-H007" value="XXXL"> XXXL</label>
+</div>
+  <div class="actions">
+    <div class="rating">★ ★ ★ ★ ☆</div>
+    <div class="rating-value">⭐ 4.4 / 5</div>
+    <button onclick="addToCart('H007','Dhoti Set',1299,'images3/dhoti1.jpg','⭐4.4','size-H007')">Add to Cart</button>
+<button onclick="buyNow('H007','Dhoti Set',1299,'images3/dhoti1.jpg','⭐4.4','size-H007')">Buy Now</button>
+</div>
+
+
+  </div>
+</div>
+
+   <!-- PRODUCT 8 -->
+  <div class="product-box" id="H008">
+  <div class="product-images">
+    <img src="{{ url_for('static', filename='images3/sweatshirt1.jpg')}}" class="main-image" id="main-H008">
+    <div class="thumbnails">
+      <img src="{{ url_for('static', filename='images3/sweatshirt1.jpg') }}" class="thumb active" onclick="changeImage('H008', this)">
+      <img src="{{ url_for('static', filename='images3/sweatshirt2.jpg') }}" class="thumb active" onclick="changeImage('H008', this)">
+      <img src="{{ url_for('static', filename='images3/sweatshirt3.jpg') }}" class="thumb active" onclick="changeImage('H008', this)">
+
+    </div>
+  </div>
+  <div class="details">
+    <h2>Sweatshirts</h2>
+    <p><strong>Price:</strong> ₹599</p>
+    <p><strong>Description:</strong> Men Sweatshirts || Sweatshirts for Men.</p>
+    <p><strong> <b>Product Detail</b>:</strong> 
+      Material compositionWool Blend <br>
+      Sleeve typeLong Sleeve <br>
+      Material typeWool Blend <br>
+      Fit typeRegular <br>
+      LengthStandard Length  <br>
+      Neck styleCollared Neck</p>
+  </div>
+  <div class="size-selector">
+  <strong>Size:</strong><br>
+  <label><input type="radio" name="size-H008" value="S"> S</label>
+  <label><input type="radio" name="size-H008" value="M"> M</label>
+  <label><input type="radio" name="size-H008" value="L"> L</label>
+  <label><input type="radio" name="size-H008" value="XL"> XL</label>
+  <label><input type="radio" name="size-H008" value="XXL"> XXL</label>
+  <label><input type="radio" name="size-H008" value="XXXL"> XXXL</label>
+</div>
+  <div class="actions">
+    <div class="rating">★ ★ ★ ★ ☆</div>
+    <div class="rating-value">⭐ 4.4 / 5</div>
+    <button onclick="addToCart('H008','Sweatshirts',599,'images3/sweatshirt2.jpg','⭐4.4','size-H008')">Add to Cart</button>
+<button onclick="buyNow('H008','Sweatshirts',599,'images3/sweatshirt2.jpg','⭐4.4','size-H008')">Buy Now</button>
+</div>
+
+  </div>
+</div>
+
+  <!-- PRODUCT 9 -->
+  <div class="product-box" id="H009">
+  <div class="product-images">
+    <img src="{{ url_for('static', filename='images3/shirt1.jpg')}}" class="main-image" id="main-H009">
+    <div class="thumbnails">
+      <img src="{{ url_for('static', filename='images3/shirt1.jpg') }}" class="thumb active" onclick="changeImage('H009', this)">
+      <img src="{{ url_for('static', filename='images3/shirt2.jpg') }}" class="thumb active" onclick="changeImage('H009', this)">
+      <img src="{{ url_for('static', filename='images3/shirt3.jpg') }}" class="thumb active" onclick="changeImage('H009', this)">
+
+    </div>
+  </div>
+  <div class="details">
+    <h2>Men's Formal Button Down Shirt</h2>
+    <p><strong>Price:</strong> ₹499.99</p>
+    <p><strong>Description:</strong> Men's Formal Button Down Shirt - Slim Fit Shirt's for Men | Textured Long Sleeve Polycotton| Business & Meeting Ready.</p>
+    <p><strong> <b>Product Detail</b></strong> 
+      Material compositionPOLYY COTTON <br>
+      PatternSolid <br>
+      Fit typeRegular Fit <br>
+      Sleeve typeLong Sleeve <br>
+      Collar styleCollared Neck <br>
+      LengthStandard Length</p>
+  </div>
+  <div class="size-selector">
+  <strong>Size:</strong><br>
+  <label><input type="radio" name="size-H009" value="S"> S</label>
+  <label><input type="radio" name="size-H009" value="M"> M</label>
+  <label><input type="radio" name="size-H009" value="L"> L</label>
+  <label><input type="radio" name="size-H009" value="XL"> XL</label>
+  <label><input type="radio" name="size-H009" value="XXL"> XXL</label>
+  <label><input type="radio" name="size-H009" value="XXXL"> XXXL</label>
+</div>
+  <div class="actions">
+    <div class="rating">★ ★ ★ ★ ☆</div>
+    <div class="rating-value">⭐ 4.6 / 5</div>
+    <button onclick="addToCart('H009','Mens Formal Button Down Shirt',499.99,'images3/shirt1.jpg','⭐4.6','size-H009')">Add to Cart</button>
+    <button onclick="buyNow('H009','Mens Formal Button Down Shirt',499.99,'images3/shirt1.jpg','⭐4.6','size-H009')">Buy Now</button>
+</div>
+
+  </div>
+</div>
+
+
+  <!-- PRODUCT 10 -->
+  <div class="product-box" id="H010">
+  <div class="product-images">
+    <img src="{{ url_for('static', filename='images3/pant1.jpg')}}" class="main-image" id="main-H010">
+    <div class="thumbnails">
+      <img src="{{ url_for('static', filename='images3/pant1.jpg') }}" class="thumb active" onclick="changeImage('H010', this)">
+      <img src="{{ url_for('static', filename='images3/pant2.jpg') }}" class="thumb active" onclick="changeImage('H010', this)">
+      <img src="{{ url_for('static', filename='images3/pant3.jpg') }}" class="thumb active" onclick="changeImage('H010', this)">
+
+    </div>
+  </div>
+  <div class="details">
+    <h2>Flip Pocket Jeans</h2>
+    <p><strong>Price:</strong> ₹799</p>
+    <p><strong>Description:</strong>  Men Loose Fit Men's Flip Pocket Jeans || Mens Stylish Cotton Loose Fit Denim Cargo || Multi-Pocket Styling Pant||</p>
+    <p><strong> <b>Product Detail</b></strong> 
+      Material typeDenim <br>
+      LengthLong Length <br>
+      Style Carrot <br>
+      Closure typeButton <br>
+      Occasion typeNew Year, Diwali, Bachelor Party, Anniversary, Birthday <br>
+      Care instructionsHand Wash Only</p>
+  </div>
+  <div class="size-selector">
+  <strong>Waist Size:</strong><br>
+  <label><input type="radio" name="size-H010" value="28"> 28</label>
+  <label><input type="radio" name="size-H010" value="30"> 30</label>
+  <label><input type="radio" name="size-H010" value="32"> 32</label>
+  <label><input type="radio" name="size-H010" value="34"> 34</label>
+  <label><input type="radio" name="size-H010" value="36"> 36</label>
+  <label><input type="radio" name="size-H010" value="38"> 38</label>
+</div>
+  <div class="actions">
+    <div class="rating">★ ★ ★ ★ ☆</div>
+    <div class="rating-value">⭐ 4.6 / 5</div>
+    <button onclick="addToCart('H010','Flip Pocket Jeans',799,'images3/pant1.jpg','⭐4.6','size-H010')">Add to Cart</button>
+<button onclick="buyNow('H010','Flip Pocket Jeans',799,'images3/pant1.jpg','⭐4.6','size-H010')">Buy Now</button>
+</div>
+  </div>
+  
+  
+ <!---11----> 
+   <div class="product-box" id="H011">
+  <div class="product-images">
+    <img src="{{ url_for('static', filename='images3/image1a.jpg')}}" class="main-image" id="main-H011">
+    <div class="thumbnails">
+      <img src="{{ url_for('static', filename='images3/image1b.jpg')}}" class="thumb active" onclick="changeImage('H011',this)">
+      <img src="{{ url_for('static', filename='images3/image1d.jpg')}}" class="thumb active" onclick="changeImage('H011',this)">
+      <img src="{{ url_for('static', filename='images3/image1a.jpg')}}" class="thumb active" onclick="changeImage('H011',this)">
+    </div>
+  </div>
+
+  <div class="details">
+    <h2>Men's T Shirt</h2>
+    <p><b>Price:</b> ₹467</p>
+    <p><b>Description:</b> Soft, breathable 100% cotton fil-a-fil fabric with subtle texture, finished with a soft touch for all-day comfort. <br>
+        Regular fit shirt featuring short sleeves, classic collar with buttons. <br></p>
+      <p><strong> <b>Product Detail</b></strong> <br>* Eco-friendly <br> * Lightweight <br> * Comfortable</p>
+    </p>
+  </div>
+<div class="size-selector">
+  <strong>Size:</strong><br>
+  <label><input type="radio" name="size-H011" value="S"> S</label>
+  <label><input type="radio" name="size-H011" value="M"> M</label>
+  <label><input type="radio" name="size-H011" value="L"> L</label>
+  <label><input type="radio" name="size-H011" value="XL"> XL</label>
+  <label><input type="radio" name="size-H011" value="XXL"> XXL</label>
+  <label><input type="radio" name="size-H011" value="XXXL"> XXXL</label>
+</div>
+
+  <div class="actions">
+    <div>★ ★ ★ ★ ☆ | ⭐ 4.4 / 5</div>
+    <button onclick="addToCart('H011','Men T Shirt',467,'images3/image1a.jpg','⭐4.4','size-H011')">
+      Add to Cart
+    </button>
+    
+    <button onclick="buyNow('H011','Men T Shirt',467,'images3/image1a.jpg','⭐4.4','size-H011')">
+      Buy Now
+    </button>
+
+  </div>
+</div>
+<!-- 12 -->
+<div class="product-box" id="H012">
+  <div class="product-images">
+    <img src="{{ url_for('static', filename='images3/image2a.jpg')}}" class="main-image" id="main-H012">
+    <div class="thumbnails">
+      <img src="{{ url_for('static', filename='images3/image2b.jpg')}}" class="thumb active" onclick="changeImage('H012',this)">
+      <img src="{{ url_for('static', filename='images3/image2d.jpg')}}" class="thumb active" onclick="changeImage('H012',this)">
+      <img src="{{ url_for('static', filename='images3/image2a.jpg')}}" class="thumb active" onclick="changeImage('H012',this)">
+    </div>
+  </div>
+
+  <div class="details">
+    <h2>Men's T Shirt</h2>
+    <p><b>Price:</b> ₹550</p>
+    <p><b>Description:</b> Soft, breathable 100% cotton fil-a-fil fabric with subtle texture, finished with a soft touch for all-day comfort. <br>
+        Regular fit shirt featuring short sleeves.</p>
+        <p><strong> <b>Product Detail</b></strong>  classic collar with zip. <br>
+      <br>* Eco-friendly <br> * Lightweight <br> * Comfortable</p>
+    </p>
+  </div>
+  <div class="size-selector">
+  <strong>Size:</strong><br>
+  <label><input type="radio" name="size-H012" value="S"> S</label>
+  <label><input type="radio" name="size-H012" value="M"> M</label>
+  <label><input type="radio" name="size-H012" value="L"> L</label>
+  <label><input type="radio" name="size-H012" value="XL"> XL</label>
+  <label><input type="radio" name="size-H012" value="XXL"> XXL</label>
+  <label><input type="radio" name="size-H012" value="XXXL"> XXXL</label>
+</div>
+
+
+  <div class="actions">
+    <div>★ ★ ★ ★ ☆ | ⭐ 4.7 / 5</div>
+    <button onclick="addToCart('H012','Men T Shirt',550,'images3/image2a.jpg','⭐4.7','size-H012')">
+      Add to Cart
+    </button>
+    <button onclick="buyNow('H012','Men T Shirt',550,'images3/image2a.jpg','⭐4.7','size-H012')">
+      Buy Now
+    </button>
+  </div>
+</div>
+<!-- 13 -->
+<div class="product-box" id="H013">
+  <div class="product-images">
+    <img src="{{ url_for('static', filename='images3/image3a.jpg')}}" class="main-image" id="main-H013">
+    <div class="thumbnails">
+      <img src="{{ url_for('static', filename='images3/image3b.jpg')}}" class="thumb active" onclick="changeImage('H013',this)">
+      <img src="{{ url_for('static', filename='images3/image3d.jpg')}}" class="thumb active" onclick="changeImage('H013',this)">
+      <img src="{{ url_for('static', filename='images3/image3a.jpg')}}" class="thumb active" onclick="changeImage('H013',this)">
+    </div>
+  </div>
+
+  <div class="details">
+    <h2>Men's T Shirt</h2>
+
+    <p><b>Price:</b> ₹600</p>
+    <p><b>Description:</b> Soft, breathable 100% cotton fil-a-fil fabric with subtle texture, finished with a soft touch for all-day comfort. <br>
+        Regular fit shirt featuring short sleeves,</p>
+        <p><strong> <b>Product Detail</b></strong>  classic collar with buttons. <br>
+      <br>* Eco-friendly <br> * Lightweight <br> * Comfortable</p>
+    </p>
+  </div>
+<div class="size-selector">
+  <strong>Size:</strong><br>
+  <label><input type="radio" name="size-H013" value="S"> S</label>
+  <label><input type="radio" name="size-H013" value="M"> M</label>
+  <label><input type="radio" name="size-H013" value="L"> L</label>
+  <label><input type="radio" name="size-H013" value="XL"> XL</label>
+  <label><input type="radio" name="size-H013" value="XXL"> XXL</label>
+  <label><input type="radio" name="size-H013" value="XXXL"> XXXL</label>
+</div>
+
+  <div class="actions">
+    <div>★ ★ ★ ★ ☆ | ⭐ 4.5 / 5</div>
+    <button onclick="addToCart('H013','Men T Shirt',600,'images3/image3a.jpg','⭐4.5','size-H013')">
+      Add to Cart
+    </button>
+    <button onclick="buyNow('H013','Men T Shirt',600,'images3/image3a.jpg','⭐4.5','size-H013')">
+      Buy Now
+    </button>
+  </div>
+</div>
+<!-- 14 -->
+<div class="product-box" id="H014">
+  <div class="product-images">
+    <img src="{{ url_for('static', filename='images3/image4a.jpg')}}" class="main-image" id="main-H014">
+    <div class="thumbnails">
+      <img src="{{ url_for('static', filename='images3/image4b.jpg')}}" class="thumb active" onclick="changeImage('H014',this)">
+      <img src="{{ url_for('static', filename='images3/image4a.jpg')}}" class="thumb active" onclick="changeImage('H014',this)">
+      
+    </div>
+  </div>
+
+  <div class="details">
+    <h2>Men's Cotton Dhotis</h2>
+    <p><b>Price:</b> ₹800</p>
+    <p><b>Description:</b> Soft, breathable 100% cotton fil-a-fil fabric with subtle texture, finished with a soft touch for all-day comfort <br>
+         with pockets. <br></p>
+      <p><strong> <b>Product Detail</b></strong> <br>* Eco-friendly <br> * Lightweight <br> * Comfortable</p>
+    </p>
+  </div>
+  <div class="size-selector">
+  <strong>Size:</strong><br>
+  <label><input type="radio" name="size-H014" value="S"> S</label>
+  <label><input type="radio" name="size-H014" value="M"> M</label>
+  <label><input type="radio" name="size-H014" value="L"> L</label>
+  <label><input type="radio" name="size-H014" value="XL"> XL</label>
+  <label><input type="radio" name="size-H014" value="XXL"> XXL</label>
+  <label><input type="radio" name="size-H014" value="XXXL"> XXXL</label>
+</div>
+
+  <div class="actions">
+    <div>★ ★ ★ ★ ☆ | ⭐ 4.6 / 5</div>
+    <button onclick="addToCart('H014','Mens Cotton Dhotis', 800,'images3/image4a.jpg','⭐4.6','size-H014')">
+      Add to Cart
+    </button>
+    <button onclick="buyNow('H014','Mens Cotton Dhotis',800,'images3/image4a.jpg','⭐4.6','size-H014')">
+      Buy Now
+    </button>
+
+  </div>
+</div>
+<!-- 15 -->
+<div class="product-box" id="H015">
+  <div class="product-images">
+    <img src="{{ url_for('static', filename='images3/image5a.jpg')}}" class="main-image" id="main-H015">
+    <div class="thumbnails">
+      <img src="{{ url_for('static', filename='images3/image5b.jpg')}}" class="thumb active" onclick="changeImage('H015',this)">
+      <img src="{{ url_for('static', filename='images3/image5c.jpg')}}" class="thumb active" onclick="changeImage('H015',this)">
+      <img src="{{ url_for('static', filename='images3/image5a.jpg')}}" class="thumb active" onclick="changeImage('H015',this)">
+      
+    </div>
+  </div>
+
+  <div class="details">
+    <h2>Men's Cotton Dhotis</h2>
+    <p><b>Price:</b> ₹1000</p>
+    <p><b>Description:</b> Soft, breathable 100% cotton fil-a-fil fabric with subtle texture, finished with a soft touch for all-day comfort <br>
+         with pockets.</p>
+         <p><strong> <b>Product Detail</b></strong>  <br>Beautiful Embroider work goes very well<br>
+      <br>* Eco-friendly <br> * Lightweight <br> * Comfortable
+    </p>
+  </div>
+  <div class="size-selector">
+  <strong>Size:</strong><br>
+  <label><input type="radio" name="size-H015" value="S"> S</label>
+  <label><input type="radio" name="size-H015" value="M"> M</label>
+  <label><input type="radio" name="size-H015" value="L"> L</label>
+  <label><input type="radio" name="size-H015" value="XL"> XL</label>
+  <label><input type="radio" name="size-H015" value="XXL"> XXL</label>
+  <label><input type="radio" name="size-H015" value="XXXL"> XXXL</label>
+</div>
+
+
+  <div class="actions">
+    <div>★ ★ ★ ★ ☆ | ⭐ 4.8 / 5</div>
+    <button onclick="addToCart('H015','Mens Cotton Dhotis', 1000,'images3/image5a.jpg','⭐4.8','size-H015')">
+      Add to Cart
+    </button>
+    <button onclick="buyNow('H015','Mens Cotton Dhotis',1000,'images3/image5a.jpg','⭐4.8','size-H015')">
+      Buy Now
+    </button>
+
+
+  </div>
+</div>
+<!-- 16 -->
+<div class="product-box" id="H016">
+  <div class="product-images">
+    <img src="{{ url_for('static', filename='images3/image6a.jpg')}}" class="main-image" id="main-H016">
+    <div class="thumbnails">
+      <img src="{{ url_for('static', filename='images3/image6b.jpg')}}" class="thumb active" onclick="changeImage('H016',this)">
+      <img src="{{ url_for('static', filename='images3/image6a.jpg')}}" class="thumb active" onclick="changeImage('H016',this)">
+      <img src="{{ url_for('static', filename='images3/image6c.jpg')}}" class="thumb active" onclick="changeImage('H016',this)">
+      
+    </div>
+  </div>
+
+  <div class="details">
+    <h2>Kurta-Pajama</h2>
+    <p><b>Price:</b> ₹1500</p>
+    <p><b>Description:</b> 
+       Elegant mens kurta pajama crafted from soft, breathable fabric for all-day comfort. <br>
+       Perfect for festivals, weddings, family functions, and ethnic occasions. <br></p>
+      <p><strong> <b>Product Detail</b></strong> <br>* Premium quality fabric<br> * Comfortable regular fit <br> * Full-sleeve kurta with button placket
+    </p>
+  </div>
+  <div class="size-selector">
+  <strong>Size:</strong><br>
+  <label><input type="radio" name="size-H016" value="S"> S</label>
+  <label><input type="radio" name="size-H016" value="M"> M</label>
+  <label><input type="radio" name="size-H016" value="L"> L</label>
+  <label><input type="radio" name="size-H016" value="XL"> XL</label>
+  <label><input type="radio" name="size-H016" value="XXL"> XXL</label>
+  <label><input type="radio" name="size-H016" value="XXXL"> XXXL</label>
+</div>
+
+
+  <div class="actions">
+    <div>★ ★ ★ ★ ☆ | ⭐ 4.2 / 5</div>
+     <button onclick="addToCart('H016','Kurta-Pajama', 1500,'images3/image6a.jpg','⭐4.2','size-H016')">
+      Add to Cart
+    </button>
+    <button onclick="buyNow('H016','Kurta-Pajama',1500,'images3/image6a.jpg','⭐4.2','size-H016')">
+      Buy Now
+    </button>
+  </div>
+</div>
+<!-- 17 -->
+<div class="product-box" id="H017">
+  <div class="product-images">
+    <img src="{{ url_for('static', filename='images3/image7a.jpg')}}" class="main-image" id="main-H017">
+    <div class="thumbnails">
+      <img src="{{ url_for('static', filename='images3/image7c.jpg')}}" class="thumb active" onclick="changeImage('H017',this)">
+      <img src="{{ url_for('static', filename='images3/image7a.jpg')}}" class="thumb active" onclick="changeImage('H017',this)">
+      <img src="{{ url_for('static', filename='images3/image7b.jpg')}}" class="thumb active" onclick="changeImage('H017',this)">
+      
+    </div>
+  </div>
+
+  <div class="details">
+    <h2>Kurta-Pajama</h2>
+    <p><b>Price:</b> ₹2500</p>
+    <p><b>Description:</b> 
+       Elegant mens kurta pajama crafted from soft, breathable fabric for all-day comfort. <br>
+       Perfect for festivals, weddings, family functions, and ethnic occasions. <br></p>
+       <p><strong> <b>Product Detail</b></strong>
+      <br>* Premium quality fabric<br> * Comfortable regular fit <br> * Full-sleeve kurta with button placket
+    </p>
+  </div>
+<div class="size-selector">
+  <strong>Size:</strong><br>
+  <label><input type="radio" name="size-H017" value="S"> S</label>
+  <label><input type="radio" name="size-H017" value="M"> M</label>
+  <label><input type="radio" name="size-H017" value="L"> L</label>
+  <label><input type="radio" name="size-H017" value="XL"> XL</label>
+  <label><input type="radio" name="size-H017" value="XXL"> XXL</label>
+  <label><input type="radio" name="size-H017" value="XXXL"> XXXL</label>
+</div>
+
+  <div class="actions">
+    <div>★ ★ ★ ★ ☆ | ⭐ 4.6/ 5</div>
+  
+    <button onclick="addToCart('H017','Kurta-Pajama', 2500,'images3/image7a.jpg','⭐4.6','size-H017')">
+      Add to Cart
+    </button>
+    <button onclick="buyNow('H017','Kurta-Pajama',2500,'images3/image7a.jpg','⭐4.6','size-H017')">
+      Buy Now
+    </button>
+  </div>
+</div>
+<!-- 18 -->
+<div class="product-box" id="H018">
+  <div class="product-images">
+    <img src="{{ url_for('static', filename='images3/image8a.jpg')}}" class="main-image" id="main-H018">
+    <div class="thumbnails">
+      <img src="{{ url_for('static', filename='images3/image8a.jpg')}}" class="thumb active" onclick="changeImage('H018',this)">
+      <img src="{{ url_for('static', filename='images3/image8b.jpg')}}" class="thumb active" onclick="changeImage('H018',this)">
+      
+    </div>
+  </div>
+
+  <div class="details">
+    <h2>Mens short kurta</h2>
+    <p><b>Price:</b> ₹1500</p>
+    <p><b>Description:</b> 
+       Elegant mens kurta pajama crafted from soft, breathable fabric for all-day comfort. <br>
+       Perfect for festivals, weddings, family functions, and ethnic occasions. <br></p>
+       <p><strong> <b>Product Detail</b></strong>
+      <br>* Premium quality fabric<br> *Casual ethnic wear <br> * Festive occasions
+    </p>
+  </div>
+<div class="size-selector">
+  <strong>Size:</strong><br>
+  <label><input type="radio" name="size-H018" value="S"> S</label>
+  <label><input type="radio" name="size-H018" value="M"> M</label>
+  <label><input type="radio" name="size-H018" value="L"> L</label>
+  <label><input type="radio" name="size-H018" value="XL"> XL</label>
+  <label><input type="radio" name="size-H018" value="XXL"> XXL</label>
+  <label><input type="radio" name="size-H018" value="XXXL"> XXXL</label>
+</div>
+
+  <div class="actions">
+    <div>★ ★ ★ ★ ☆ | ⭐ 4.6/ 5</div>
+   <button onclick="addToCart('H018','Mens short kurta', 1500,'images3/image8a.jpg','⭐4.6','size-H018')">
+      Add to Cart
+    </button>
+    <button onclick="buyNow('H018','Mens short kurta',1500,'images3/image8a.jpg','⭐4.6','size-H018')">
+      Buy Now
+    </button>
+
+
+  </div>
+</div>
+<!-- 19 -->
+<div class="product-box" id="H019">
+  <div class="product-images">
+    <img src="{{ url_for('static', filename='images3/image9a.jpg')}}" class="main-image" id="main-H019">
+    <div class="thumbnails">
+      <img src="{{ url_for('static', filename='images3/image9c.jpg')}}" class="thumb active" onclick="changeImage('H019',this)">
+      <img src="{{ url_for('static', filename='images3/image9b.jpg')}}" class="thumb active" onclick="changeImage('H019',this)">
+     <img src="{{ url_for('static', filename='images3/image9a.jpg')}}" class="thumb active" onclick="changeImage('H019',this)">
+
+      
+    </div>
+  </div>
+
+  <div class="details">
+    <h2>Mens short kurta</h2>
+
+    <p><b>Price:</b> ₹1200</p>
+    <p><b>Description:</b> 
+       Elegant mens kurta pajama crafted from soft, breathable fabric for all-day comfort. <br>
+       Perfect for festivals, weddings, family functions, and ethnic occasions. <br></p>
+       <p><strong> <b>Product Detail</b></strong>
+      <br>* Premium quality fabric<br> *Casual ethnic wear <br> * Festive occasions
+    </p>
+  </div>
+<div class="size-selector">
+  <strong>Size:</strong><br>
+  <label><input type="radio" name="size-H019" value="S"> S</label>
+  <label><input type="radio" name="size-H019" value="M"> M</label>
+  <label><input type="radio" name="size-H019" value="L"> L</label>
+  <label><input type="radio" name="size-H019" value="XL"> XL</label>
+  <label><input type="radio" name="size-H019" value="XXL"> XXL</label>
+  <label><input type="radio" name="size-H019" value="XXXL"> XXXL</label>
+</div>
+
+  <div class="actions">
+    <div>★ ★ ★ ★ ☆ | ⭐ 4.6/ 5</div>
+   <button onclick="addToCart('H019','Mens short kurta', 1200,'images3/image9a.jpg','⭐4.6','size-H019')">
+      Add to Cart
+    </button>
+    <button onclick="buyNow('H019','Mens short kurta',1200,'images3/image9a.jpg','⭐4.6','size-H019')">
+      Buy Now
+    </button>
+  </div>
+</div>
+<!-- 20 -->
+<div class="product-box" id="H020">
+  <div class="product-images">
+    <img src="{{ url_for('static', filename='images3/image10a.jpg')}}" class="main-image" id="main-H020">
+    <div class="thumbnails">
+      <img src="{{ url_for('static', filename='images3/image10c.jpg')}}" class="thumb active" onclick="changeImage('H020',this)">
+      <img src="{{ url_for('static', filename='images3/image10b.jpg')}}" class="thumb active" onclick="changeImage('H020',this)">
+      <img src="{{ url_for('static', filename='images3/image10a.jpg')}}" class="thumb active" onclick="changeImage('H020',this)">
+
+    </div>
+  </div>
+
+  <div class="details">
+    <h2>Mens Jeans Shirt</h2>
+    <p><b>Price:</b> ₹800</p>
+    <p><b>Description:</b> 
+       Elegant mens kurta pajama crafted from soft, breathable fabric for all-day comfort. <br>
+       Perfect for festivals, weddings, family functions, and ethnic occasions. <br></p>
+       <p><strong> <b>Product Detail</b></strong>
+      <br>* Premium quality fabric<br> *Casual ethnic wear <br> * Festive occasions
+    </p>
+  </div>
+  <div class="size-selector">
+  <strong>Size:</strong><br>
+  <label><input type="radio" name="size-H020" value="S"> S</label>
+  <label><input type="radio" name="size-H020" value="M"> M</label>
+  <label><input type="radio" name="size-H020" value="L"> L</label>
+  <label><input type="radio" name="size-H020" value="XL"> XL</label>
+  <label><input type="radio" name="size-H020" value="XXL"> XXL</label>
+  <label><input type="radio" name="size-H020" value="XXXL"> XXXL</label>
+</div>
+
+  <div class="actions">
+    <div>★ ★ ★ ★ ☆ | ⭐ 4.6/ 5</div>
+    <button onclick="addToCart('H020','Mens Jeans Shirt', 800,'images3/image10a.jpg','⭐4.6','size-H020')">
+      Add to Cart
+    </button>
+    <button onclick="buyNow('H020','Mens Jeans Shirt',800,'images3/image10a.jpg','⭐4.6','size-H020')">
+      Buy Now
+    </button>
+
+  </div>
+</div>
+</div>
+
+<!-- ================= FLOATING CHAT ================= -->
+<div id="chatButton">💬 Chat</div>
+
+<div id="chatPopup">
+    <div class="chat-header">
+         <a href="home.html"><img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Nature Craft Store Logo"></a> Nature Craft Store 
+        <button id="closeChat">✖</button>
+    </div>
+
+    <div class="chat-box" id="chatBox"></div>
+
+    <div class="chat-buttons" id="chatButtons"></div>
+
+    <div class="chat-input">
+        <input type="text" id="userMessage" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <div class="contact-links">
+        <p>📞 <a href="tel:+919876543210">Call: +91 98765 43210</a></p>
+        <p>📧 <a href="mailto:support@naturecraft.com">Email: support@naturecraft.com</a></p>
+        <button onclick="clearChat()" class="clear-chat-btn">Clear Chat</button>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='product_detail2.js') }}"></script>
+
+<script src="{{ url_for('static', filename='contact.js') }}" defer></script>
+</body>
+</html>

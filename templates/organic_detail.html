@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nature Craft Store - Products</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{ url_for('static', filename='product_detail.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar">
+    <div class="logo">
+      <a href="{{ url_for('home') }}">
+        <img src="{{ url_for('static', filename='logo.jpeg') }}">
+      </a>
+      Nature Craft Store
+    </div>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <ul class="nav-links">
+      <li><a href="{{ url_for('home') }}">Home</a></li>
+      <li><a href="{{ url_for('handmade') }}">Handmade Craft</a></li>
+      <li><a href="{{url_for('organic')}}">Organic Beauty</a></li>
+      <li><a href="{{url_for('products')}}">Fashion</a></li>
+      <li><a href="{{ url_for('cart') }}">🛒 Cart <span id="cart-count">0</span></a></li>
+      <li><a href="{{url_for('account')}}">👤</a></li>
+      
+    </ul>
+  </nav>
+</header>
+<div class="container">
+
+<!-- ================= PRODUCT 1 ================= -->
+  <div class="product-box" id="OB01">
+    <div class="product-images">
+      <img src="{{ url_for('static', filename='images2/AS1.png') }}" class="main-image" id="main-OB01">
+      <div class="thumbnails">
+        <img src="{{ url_for('static', filename='images2/AS1.png') }}" class="thumb active" onclick="changeImage('OB01', this)">
+        <img src="{{ url_for('static', filename='images2/AS2.png') }}" class="thumb active" onclick="changeImage('OB01', this)">
+        <img src="{{ url_for('static', filename='images2/AS3.png') }}" class="thumb active" onclick="changeImage('OB01', this)">
+      </div>
+    </div>
+    <div class="details">
+      <h2>Aloe Vera Soap</h2>
+      <p><strong>Price:</strong> ₹199.99</p>
+      <p><strong>Description:</strong> Pure herbal soap made from aloe vera extracts, natural oils, and sandalwood.</p>
+      <p><strong>Ingredients:</strong> Aloe Vera, Sandalwood, Coconut Oil, Glycerin.</p>
+      <p><strong>Benefits:</strong> Moisturizes skin, reduces acne, natural fragrance.</p>
+      <p><strong>Usage:</strong> Apply on wet skin, lather, and rinse thoroughly.</p>
+      <p><strong>Weight:</strong> 100g</p>
+      <p><strong>Suitable For:</strong> All skin types</p>
+    </div>
+    <div class="actions">
+      <div class="rating">★ ★ ★ ★ ☆</div>
+      <div class="rating-value">⭐ 4.2 / 5</div>
+      <button onclick="addToCart('OB01','Aloe Vera Soap',199.99,'images2/AS1.png','⭐4.2')">Add to Cart</button>
+      <button onclick="buyNow('OB01','Aloe Vera Soap',199.99,'images2/AS1.png','⭐4.2')">Buy Now</button>
+    </div>
+  </div>
+
+  <!-- ================= PRODUCT 2 ================= -->
+  <div class="product-box" id="OB04">
+    <div class="product-images">
+      <img src="{{ url_for('static', filename='images2/LS1.png') }}" class="main-image" id="main-OB04">
+      <div class="thumbnails">
+        <img src="{{ url_for('static', filename='images2/LS1.png') }}"class="thumb active" onclick="changeImage('OB04', this)">
+        <img src="{{ url_for('static', filename='images2/LS2.png') }}" class="thumb active" onclick="changeImage('OB04', this)">
+        <img src="{{ url_for('static', filename='images2/LS3.png') }}" class="thumb active" onclick="changeImage('OB04', this)">
+      </div>
+    </div>
+    <div class="details">
+      <h2>Lavender Bliss Soap</h2>
+      <p><strong>Price:</strong> ₹259</p>
+      <p><strong>Description:</strong> Pure herbal soap made from Lavender extracts and essential oils.</p>
+      <p><strong>Ingredients:</strong> Lavender Extract, Olive Oil, Coconut Oil, Glycerin.</p>
+      <p><strong>Benefits:</strong> Relaxing fragrance, soothes skin, natural moisture.</p>
+      <p><strong>Usage:</strong> Lather and rinse thoroughly on wet skin.</p>
+      <p><strong>Weight:</strong> 120g</p>
+      <p><strong>Suitable For:</strong> All skin types</p>
+    </div>
+    <div class="actions">
+      <div class="rating">★ ★ ★ ★ ★</div>
+      <div class="rating-value">⭐ 4.5 / 5</div>
+      <button onclick="addToCart('OB04','Lavender Bliss Soap',259,'images2/LS1.png','⭐4.5')">Add to Cart</button>
+      <button onclick="buyNow('OB04','Lavender Bliss Soap',259,'images2/LS1.png','⭐4.5')">Buy Now</button>
+    </div>
+  </div>
+
+  <!-- ================= PRODUCT 3 ================= -->
+  <div class="product-box" id="OB06">
+    <div class="product-images">
+      <img src="{{ url_for('static', filename='images2/RS1.jpeg') }}" class="main-image" id="main-OB06">
+      <div class="thumbnails">
+        <img src="{{ url_for('static', filename='images2/RS1.jpeg') }}" class="thumb active" onclick="changeImage('OB06', this)">
+        <img src="{{ url_for('static', filename='images2/RS2.png') }}" class="thumb active" onclick="changeImage('OB06', this)">
+        <img src="{{ url_for('static', filename='images2/RS3.png') }}" class="thumb active" onclick="changeImage('OB06', this)">
+      </div>
+    </div>
+    <div class="details">
+      <h2>Rose Bliss Soap</h2>
+      <p><strong>Price:</strong> ₹299</p>
+      <p><strong>Description:</strong> Pure herbal soap made from Rose extracts and oils.</p>
+      <p><strong>Ingredients:</strong> Rose Extract, Almond Oil, Glycerin, Coconut Oil.</p>
+      <p><strong>Benefits:</strong> Softens skin, natural fragrance, moisturizes.</p>
+      <p><strong>Usage:</strong> Lather and rinse thoroughly.</p>
+      <p><strong>Weight:</strong> 100g</p>
+      <p><strong>Suitable For:</strong> All skin types</p>
+    </div>
+    <div class="actions">
+      <div class="rating">★ ★ ★ ★ ☆</div>
+      <div class="rating-value">⭐ 4.3 / 5</div>
+      <button onclick="addToCart('OB06','Rose Bliss Soap',299,'images2/RS1.jpeg','⭐4.3')">Add to Cart</button>
+      <button onclick="buyNow('OB06','Rose Bliss Soap',299,'images2/RS1.jpeg','⭐4.3')">Buy Now</button>
+          Buy Now
+        </button>
+    </div>
+  </div>
+
+  <!-- ================= PRODUCT 4 ================= -->
+  <div class="product-box" id="OB07">
+    <div class="product-images">
+      <img src="{{ url_for('static', filename='images2/TS1.jpeg') }}" class="main-image" id="main-OB07">
+      <div class="thumbnails">
+        <img src="{{ url_for('static', filename='images2/TS1.jpeg') }}" class="thumb active" onclick="changeImage('OB07', this)">
+        <img src="{{ url_for('static', filename='images2/TS2.png') }}" class="thumb active" onclick="changeImage('OB07', this)">
+        <img src="{{ url_for('static', filename='images2/TS3.png') }}" class="thumb active" onclick="changeImage('OB07', this)">
+      </div>
+    </div>
+    <div class="details">
+      <h2>Turmeric Glow Soap</h2>
+      <p><strong>Price:</strong> ₹349</p>
+      <p><strong>Description:</strong> Pure herbal soap made from Turmeric extracts and natural oils.</p>
+      <p><strong>Ingredients:</strong> Turmeric, Coconut Oil, Olive Oil, Glycerin.</p>
+      <p><strong>Benefits:</strong> Brightens skin, reduces acne, anti-inflammatory.</p>
+      <p><strong>Usage:</strong> Apply on wet skin, lather, rinse.</p>
+      <p><strong>Weight:</strong> 110g</p>
+      <p><strong>Suitable For:</strong> All skin types</p>
+    </div>
+    <div class="actions">
+      <div class="rating">★ ★ ★ ★ ★</div>
+      <div class="rating-value">⭐ 4.6 / 5</div>
+      <button onclick="addToCart('OB07','Turmeric Glow Soap',349,'images2/TS1.jpeg','⭐4.6')">Add to Cart</button>
+  <button onclick="buyNow('OB07','Turmeric Glow Soap',349,'images2/TS1.jpeg','⭐4.6')">Buy Now</button>
+        </div>
+  </div>
+
+  <!-- ================= PRODUCT 5 ================= -->
+  <div class="product-box" id="OB05">
+    <div class="product-images">
+    <img src="{{ url_for('static', filename='images2/mc1.jpeg') }}" class="main-image" id="main-OB05">
+      <div class="thumbnails">
+        <img src="{{ url_for('static', filename='images2/mc1.jpeg') }}" class="thumb active" onclick="changeImage('OB05', this)">
+        <img src="{{ url_for('static', filename='images2/mc2.png') }}" class="thumb active" onclick="changeImage('OB05', this)">
+      </div>
+    </div>
+    <div class="details">
+      <h2>Meethi Seeds & Curry Leaves Hair Oil</h2>
+      <p><strong>Price:</strong> ₹249</p>
+      <p><strong>Description:</strong> Hair oil prepared from Meethi seeds and curry leaves.</p>
+      <p><strong>Ingredients:</strong> Meethi Seeds, Curry Leaves, Coconut Oil, Almond Oil.</p>
+      <p><strong>Benefits:</strong> Strengthens hair, reduces hair fall, promotes hair growth.</p>
+      <p><strong>Usage:</strong> Massage onto scalp 2-3 times a week.</p>
+      <p><strong>Volume:</strong> 200ml</p>
+      <p><strong>Suitable For:</strong> Dry and normal hair</p>
+    </div>
+    <div class="actions">
+      <div class="rating">★ ★ ★ ★ ☆</div>
+      <div class="rating-value">⭐ 4.4 / 5</div>
+      <button onclick="addToCart('OB05','Nourish & Shine Hair Oil',249,'images2/mc1.jpeg','⭐4.4')">Add to Cart</button>
+      <button onclick="buyNow('OB05','Nourish & Shine Hair Oil',249,'images2/mc1.jpeg','⭐4.4')">Buy Now</button>
+    </div>
+  </div>
+
+  <!-- ================= PRODUCT 6 ================= -->
+  <div class="product-box" id="OB08">
+    <div class="product-images">
+      <img src="{{ url_for('static', filename='images2/mr1.jpeg') }}" class="main-image" id="main-OB08">
+      <div class="thumbnails">
+        <img src="{{ url_for('static', filename='images2/mr1.jpeg') }}" class="thumb active" onclick="changeImage('OB08', this)">
+        <img src="{{ url_for('static', filename='images2/mr2.png') }}" class="thumb active" onclick="changeImage('OB08', this)">
+      </div>
+    </div>
+    <div class="details">
+      <h2>Meethi Seeds & Rosemary Hair Oil</h2>
+      <p><strong>Price:</strong> ₹699</p>
+      <p><strong>Description:</strong> Hair oil prepared from Meethi seeds and Rosemary.</p>
+      <p><strong>Ingredients:</strong> Meethi Seeds, Rosemary, Coconut Oil.</p>
+      <p><strong>Benefits:</strong> Strengthens hair, reduces dandruff, promotes growth.</p>
+      <p><strong>Usage:</strong> Massage onto scalp 2-3 times a week.</p>
+      <p><strong>Volume:</strong> 150ml</p>
+      <p><strong>Suitable For:</strong> All hair types</p>
+    </div>
+    <div class="actions">
+      <div class="rating">★ ★ ★ ★ ☆</div>
+      <div class="rating-value">⭐ 4.1 / 5</div>
+      <button onclick="addToCart('OB08','Meethi Seeds & Rosemary Hair Oil',699,'images2/mr1.jpeg','⭐4.1')">Add to Cart</button>
+      <button onclick="buyNow('OB08','Meethi Seeds & Rosemary Hair Oil',699,'images2/mr1.jpeg','⭐4.1')">Buy Now</button>
+    </div>
+  </div>
+
+  <!-- ================= PRODUCT 7 ================= -->
+  <div class="product-box" id="OB12">
+    <div class="product-images">
+      <img src="{{ url_for('static', filename='images2/ro1.jpeg') }}" class="main-image" id="main-OB12">
+      <div class="thumbnails">
+        <img src="{{ url_for('static', filename='images2/ro2.png') }}" class="thumb active" onclick="changeImage('OB12', this)">
+        <img src="{{ url_for('static', filename='images2/ro1.jpeg') }}" class="thumb active" onclick="changeImage('OB12', this)">
+      </div>
+    </div>
+    <div class="details">
+      <h2>Rose Hair Oil</h2>
+      <p><strong>Price:</strong> ₹429</p>
+      <p><strong>Description:</strong> Hair oil prepared from pure Rose essential oils.</p>
+      <p><strong>Ingredients:</strong> Rose Oil, Almond Oil, Coconut Oil.</p>
+      <p><strong>Benefits:</strong> Strengthens hair, improves shine, reduces hair fall.</p>
+      <p><strong>Usage:</strong> Massage onto scalp 2-3 times a week.</p>
+      <p><strong>Volume:</strong> 200ml</p>
+      <p><strong>Suitable For:</strong> All hair types</p>
+    </div>
+    <div class="actions">
+      <div class="rating">★ ★ ★ ★ ☆</div>
+      <div class="rating-value">⭐ 4.3 / 5</div>
+      <button onclick="addToCart('OB12','Rose Hair Oil',429,'images2/ro1.jpeg','⭐4.3')">Add to Cart</button>
+      <button onclick="buyNow('OB12','Rose Hair Oil',429,'images2/ro1.jpeg','⭐4.3')">Buy Now</button>
+    </div>
+  </div>
+
+  <!-- ================= PRODUCT 8 ================= -->
+  <div class="product-box" id="OB09">
+    <div class="product-images">
+      <img src="{{ url_for('static', filename='images2/l1.jpeg') }}" class="main-image" id="main-OB09">
+      <div class="thumbnails">
+        <img src="{{ url_for('static', filename='images2/l1.jpeg') }}" class="thumb active" onclick="changeImage(OB09', this)">
+        <img src="{{ url_for('static', filename='images2/l2.png') }}" class="thumb active" onclick="changeImage('OB09', this)">
+        <img src="{{ url_for('static', filename='images2/l3.png') }}" class="thumb active" onclick="changeImage('OB09', this)">
+      </div>
+    </div>
+    <div class="details">
+      <h2>Lemon Brightening Face Pack</h2>
+      <p><strong>Price:</strong> ₹249</p>
+      <p><strong>Description:</strong> Chemical-free face pack made from Kaolin clay and Lemon peel.</p>
+      <p><strong>Ingredients:</strong> Lemon Peel Powder, Kaolin Clay, Aloe Vera.</p>
+      <p><strong>Benefits:</strong> Brightens skin, reduces pigmentation, removes impurities.</p>
+      <p><strong>Usage:</strong> Apply evenly on face, leave 10–15 mins, rinse with water.</p>
+      <p><strong>Weight:</strong> 100g</p>
+      <p><strong>Suitable For:</strong> Normal to oily skin</p>
+    </div>
+    <div class="actions">
+      <div class="rating">★ ★ ★ ★ ☆</div>
+      <div class="rating-value">⭐ 4.4 / 5</div>
+      <button onclick="addToCart('OB09','Lemon Brightening Face Pack',249,'images2/l1.jpeg','⭐4.4')">Add to Cart</button>
+      <button onclick="buyNow('OB09','Lemon Brightening Face Pack',249,'images2/l1.jpeg','⭐4.4')">Buy Now</button>
+    </div>
+  </div>
+
+  <!-- ================= PRODUCT 9 ================= -->
+  <div class="product-box" id="OB10">
+    <div class="product-images">
+      <img src="{{ url_for('static', filename='images2/on1.jpeg') }}" class="main-image" id="main-OB10">
+      <div class="thumbnails">
+        <img src="{{ url_for('static', filename='images2/on1.jpeg') }}" class="thumb active" onclick="changeImage('OB10', this)">
+        <img src="{{ url_for('static', filename='images2/on2.png') }}" class="thumb active" onclick="changeImage('OB10', this)">
+        <img src="{{ url_for('static', filename='images2/on3.png') }}" class="thumb active" onclick="changeImage('OB10', this)">
+      </div>
+    </div>
+    <div class="details">
+      <h2>Orange & Neem Face Pack</h2>
+      <p><strong>Price:</strong> ₹399
+      </p>
+      <p><strong>Description:</strong> Face pack prepared from Orange peel powder and Neem.</p>
+      <p><strong>Ingredients:</strong> Orange Peel, Neem Powder, Multani Mitti.</p>
+      <p><strong>Benefits:</strong> Controls oil, reduces acne, brightens skin.</p>
+      <p><strong>Usage:</strong> Apply on face, leave 10–15 mins, rinse.</p>
+      <p><strong>Weight:</strong> 100g</p>
+      <p><strong>Suitable For:</strong> Oily & combination skin</p>
+    </div>
+    <div class="actions">
+      <div class="rating">★ ★ ★ ★ ☆</div>
+      <div class="rating-value">⭐ 4.2 / 5</div>
+      <button onclick="addToCart('OB10','Orange & Neem Face Pack',399,'images2/on1.jpeg','⭐4.2')">Add to Cart</button>
+      <button onclick="buyNow('OB10','Orange & Neem Face Pack',399,'images2/on1.jpeg','⭐4.2')">Buy Now</button>
+    </div>
+  </div>
+
+  <!-- ================= PRODUCT 10 ================= -->
+  <div class="product-box" id="OB13">
+    <div class="product-images">
+      <img src="{{ url_for('static', filename='images2/mm1.jpeg') }}" class="main-image" id="OB13">
+      <div class="thumbnails">
+        <img src="{{ url_for('static', filename='images2/mm1.jpeg') }}" class="thumb active" onclick="changeImage('OB13', this)">
+        <img src="{{ url_for('static', filename='images2/mm2.png') }}" class="thumb active" onclick="changeImage('OB132', this)">
+        <img src="{{ url_for('static', filename='images2/mm3.png') }}" class="thumb active" onclick="changeImage('OB133', this)">
+      </div>
+    </div>
+    <div class="details">
+      <h2>Multani Mitti Face Pack</h2>
+      <p><strong>Price:</strong> ₹399</p>
+      <p><strong>Description:</strong> Chemical-free face pack made from Multani Mitti powder.</p>
+      <p><strong>Ingredients:</strong> Multani Mitti, Aloe Vera Powder, Rose Water.</p>
+      <p><strong>Benefits:</strong> Deep cleansing, oil control, skin brightening.</p>
+      <p><strong>Usage:</strong> Mix with water or rose water, apply on face, rinse after 10 mins.</p>
+      <p><strong>Weight:</strong> 100g</p>
+      <p><strong>Suitable For:</strong> Oily & combination skin</p>
+    </div>
+    <div class="actions">
+      <div class="rating">★ ★ ★ ★ ☆</div>
+      <div class="rating-value">⭐ 4.1 / 5</div>
+      <button onclick="addToCart('OB13','Multani Mitti Face Pack',399,'images2/mm1.jpeg','⭐4.1')">Add to Cart</button>
+      <button onclick="buyNow('OB13','Multani Mitti Face Pack',399,'images2/mm1.jpeg','⭐4.1')">Buy Now</button>
+    </div>
+  </div>
+
+  <!-- ================= PRODUCT 11 ================= -->
+  <div class="product-box" id="OB14">
+    <div class="product-images">
+      <img src="{{ url_for('static', filename='images2/rp1.jpeg') }}" class="main-image" id="main-OB14">
+      <div class="thumbnails">
+        <img src="{{ url_for('static', filename='images2/rp1.jpeg') }}" class="thumb active" onclick="changeImage('OB14', this)">
+        <img src="{{ url_for('static', filename='images2/rp2.png') }}" class="thumb active" onclick="changeImage('OB142', this)">
+        <img src="{{ url_for('static', filename='images2/rp3.png') }}"class="thumb active" onclick="changeImage('OB143', this)">
+      </div>
+    </div>
+    <div class="details">
+      <h2>Rose Powder Face Pack</h2>
+      <p><strong>Price:</strong> ₹349</p>
+      <p><strong>Description:</strong> Natural face pack made from pure Rose powder.</p>
+      <p><strong>Ingredients:</strong> Rose Powder, Multani Mitti, Aloe Vera.</p>
+      <p><strong>Benefits:</strong> Moisturizes, soothes, brightens skin.</p>
+      <p><strong>Usage:</strong> Apply on face, rinse after 10–15 mins.</p>
+      <p><strong>Weight:</strong> 100g</p>
+      <p><strong>Suitable For:</strong> All skin types</p>
+    </div>
+    <div class="actions">
+      <div class="rating">★ ★ ★ ★ ★</div>
+      <div class="rating-value">⭐ 4.5 / 5</div>
+      <button onclick="addToCart('OB14','Rose Powder Face Pack',349,'images2/rp1.jpeg','⭐4.5')">Add to Cart</button>
+      <button onclick="buyNow('OB14','Rose Powder Face Pack',349,'images2/rp1.jpeg','⭐4.5')">Buy Now</button>
+
+    </div>
+  </div>
+
+  <!-- ================= PRODUCT 12 ================= -->
+  <div class="product-box" id="OB03">
+    <div class="product-images">
+      <img src="{{ url_for('static', filename='images2/HS1.png') }}" class="main-image" id="main-OB03">
+      <div class="thumbnails">
+        <img src="{{ url_for('static', filename='images2/HS1.png') }}" class="thumb active" onclick="changeImage('OB03', this)">
+        <img src="{{ url_for('static', filename='images2/HS2.png') }}" class="thumb active" onclick="changeImage('OB03', this)">
+        <img src="{{ url_for('static', filename='images2/HS3.png') }}" class="thumb active" onclick="changeImage('OB03', this)">
+      </div>
+    </div>
+    <div class="details">
+      <h2>Hibiscus Shampoo</h2>
+      <p><strong>Price:</strong> ₹399</p>
+      <p><strong>Description:</strong> Hibiscus shampoo that promotes hair growth and reduces hair fall.</p>
+      <p><strong>Ingredients:</strong> Hibiscus Extract, Aloe Vera, Coconut Oil.</p>
+      <p><strong>Benefits:</strong> Strengthens hair, adds shine, reduces breakage.</p>
+      <p><strong>Usage:</strong> Apply on wet hair, massage, rinse.</p>
+      <p><strong>Volume:</strong> 200ml</p>
+      <p><strong>Suitable For:</strong> All hair types</p>
+    </div>
+    <div class="actions">
+      <div class="rating">★ ★ ★ ★ ☆</div>
+      <div class="rating-value">⭐ 4.4 / 5</div>
+      <button onclick="addToCart('OB03','Hibiscus Shampoo',399,'images2/HS1.png','⭐4.4')">Add to Cart</button>
+      <button onclick="buyNow('OB03','Hibiscus Shampoo',399,'images2/HS1.png','⭐4.4')">Buy Now</button>
+
+    </div>
+  </div>
+  <!-- ================= PRODUCT 13 ================= -->
+  <div class="product-box" id="OB15">
+    <div class="product-images">
+      <img src="{{ url_for('static', filename='images2/NS1.png') }}" class="main-image" id="main-OB15">
+      <div class="thumbnails">
+        <img src="{{ url_for('static', filename='images2/NS1.png') }}" class="thumb active" onclick="changeImage('OB15', this)">
+        <img src="{{ url_for('static', filename='images2/NS2.png') }}" class="thumb active" onclick="changeImage('OB152', this)">
+        <img src="{{ url_for('static', filename='images2/NS3.png') }}" class="thumb active" onclick="changeImage('OB153', this)">
+      </div>
+    </div>
+    <div class="details">
+      <h2>Neem Shampoo</h2>
+      <p><strong>Price:</strong> ₹200</p>
+      <p><strong>Description:</strong> Neem shampoo that promotes hair growth and reduces dandruff.</p>
+      <p><strong>Ingredients:</strong> Neem Extract, Aloe Vera, Coconut Oil.</p>
+      <p><strong>Benefits:</strong> Reduces dandruff, strengthens hair, natural shine.</p>
+      <p><strong>Usage:</strong> Massage on wet hair, rinse thoroughly.</p>
+      <p><strong>Volume:</strong> 200ml</p>
+      <p><strong>Suitable For:</strong> All hair types</p>
+    </div>
+    <div class="actions">
+      <div class="rating">★ ★ ★ ★ ☆</div>
+      <div class="rating-value">⭐ 4.3 / 5</div>
+      <button onclick="addToCart('OB15','Neem Shampoo',199,'images2/NS1.png','⭐4.3')">Add to Cart</button>
+      <button onclick="buyNow('OB15','Neem Shampoo',199,'images2/NS1.png','⭐4.3')">Buy Now</button>
+    </div>
+  </div>
+
+  <!-- ================= PRODUCT 14 ================= -->
+  <div class="product-box" id="OB11">
+    <div class="product-images">
+      <img src="{{ url_for('static', filename='images2/OS1.jpeg') }}" class="main-image" id="main-OB11">
+      <div class="thumbnails">
+        <img src="{{ url_for('static', filename='images2/OS1.jpeg') }}" class="thumb active" onclick="changeImage('OB11', this)">
+        <img src="{{ url_for('static', filename='images2/OS2.png') }}" class="thumb active" onclick="changeImage('OB112', this)">
+        <img src="{{ url_for('static', filename='images2/OS3.png') }}" class="thumb active" onclick="changeImage('OB113', this)">
+      </div>
+    </div>
+    <div class="details">
+      <h2>Onion Shampoo</h2>
+      <p><strong>Price:</strong> ₹250</p>
+      <p><strong>Description:</strong> Onion shampoo that promotes hair growth and reduces hair fall.</p>
+      <p><strong>Ingredients:</strong> Onion Extract, Aloe Vera, Coconut Oil.</p>
+      <p><strong>Benefits:</strong> Reduces hair fall, strengthens roots, adds shine.</p>
+      <p><strong>Usage:</strong> Apply on wet hair, massage, rinse.</p>
+      <p><strong>Volume:</strong> 200ml</p>
+      <p><strong>Suitable For:</strong> All hair types</p>
+    </div>
+    <div class="actions">
+      <div class="rating">★ ★ ★ ★ ☆</div>
+      <div class="rating-value">⭐ 4.2 / 5</div>
+        <button onclick="addToCart('OB11','Onion Shampoo',349,'images2/OS1.jpeg','⭐4.2')">Add to Cart</button>
+        <button onclick="buyNow('OB11','Onion Shampoo',349,'images2/OS1.jpeg','⭐4.2')">Buy Now</button>  
+    </div>
+  </div>
+
+
+<!-- ================= PRODUCT 15 ================= -->
+  <div class="product-box" id="OB02">
+    <div class="product-images">
+      <img src="{{ url_for('static', filename='images2/AS11.jpeg') }}" class="main-image" id="main-OB02">
+      <div class="thumbnails">
+        <img src="{{ url_for('static', filename='images2/AS11.jpeg') }}" class="thumb active" onclick="changeImage('OB02', this)">
+        <img src="{{ url_for('static', filename='images2/AS12.png') }}" class="thumb active"onclick="changeImage('OB02', this)">
+        <img src="{{ url_for('static', filename='images2/AS13.png') }}" class="thumb active"onclick="changeImage('OB02', this)">
+      </div>
+    </div>
+    <div class="details">
+      <h2>Aloe Vera Shampoo</h2>
+      <p><strong>Price:</strong> ₹320</p>
+      <p><strong>Description:</strong> Aloe vera shampoo that promotes hair growth and reduces hair fall.</p>
+      <p><strong>Ingredients:</strong> Aloe Vera Extract, Coconut Oil, Olive Oil.</p>
+      <p><strong>Benefits:</strong> Strengthens hair, reduces dandruff, promotes shine.</p>
+      <p><strong>Usage:</strong> Apply on wet hair, massage, rinse thoroughly.</p>
+      <p><strong>Volume:</strong> 200ml</p>
+      <p><strong>Suitable For:</strong> All hair types</p>
+    </div>
+    <div class="actions">
+      <div class="rating">★ ★ ★ ★ ☆</div>
+      <div class="rating-value">⭐ 4.6 / 5</div>
+      <button onclick="addToCart('OB02','Aloe Vera Shampoo',320,'images2/AS11.jpeg','⭐4.6')">Add to Cart</button>
+      <button onclick="buyNow('OB02','Aloe Vera Shampoo',320,'images2/AS11.jpeg','⭐4.6')">Buy Now</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- ================= FLOATING CHAT ================= -->
+<div id="chatButton">💬 Chat</div>
+
+<div id="chatPopup">
+    <div class="chat-header">
+         <a href="home.html"><img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Nature Craft Store Logo"></a> Nature Craft Store 
+        <button id="closeChat">✖</button>
+    </div>
+
+    <div class="chat-box" id="chatBox"></div>
+
+    <div class="chat-buttons" id="chatButtons"></div>
+
+    <div class="chat-input">
+        <input type="text" id="userMessage" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <div class="contact-links">
+        <p>📞 <a href="tel:+919876543210">Call: +91 98765 43210</a></p>
+        <p>📧 <a href="mailto:support@naturecraft.com">Email: support@naturecraft.com</a></p>
+        <button onclick="clearChat()" class="clear-chat-btn">Clear Chat</button>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename='product_detail2.js') }}"></script>
+
+<script src="{{ url_for('static', filename='contact.js') }}" defer></script>
+</body>
+</head>

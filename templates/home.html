@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nature Craft Store</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+</head>
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="{{ url_for('home') }}">
+                <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Nature Craft Store Logo">
+            </a>
+            Nature Craft Store
+        </div>
+
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+        <div class="search-container">
+            <input type="text" placeholder="Search for products...">
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('handmade') }}">Handmade Craft</a></li>
+            <li><a href="{{ url_for('organic') }}">Organic Beauty</a></li>
+            <li><a href="{{ url_for('products') }}">Fashion</a></li>
+            <li>
+                <a href="{{ url_for('cart') }}">🛒 Cart <span id="cart-count">0</span></a>
+            </li>
+            <li><a href="{{ url_for('account') }}">👤</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+<!-- ================= HERO SECTION ================= -->
+<section class="hero-slider">
+    <div class="slides">
+        <img src="{{ url_for('static', filename='images/ncss1.jpeg') }}" class="slide">
+        <img src="{{ url_for('static', filename='images/ncsb1.avif') }}" class="slide">
+        <img src="{{ url_for('static', filename='images/images(3).jpg') }}" class="slide">
+        <img src="{{ url_for('static', filename='images/ts5.jpeg') }}" class="slide">
+    </div>
+
+    <div class="hero-content">
+        <h1>Welcome {{ session.get('username') }}</h1>
+        <p>Handmade • Organic • Authentic • Fashion</p>
+        <a href="{{ url_for('products') }}">Shop Now</a>
+
+    </div>
+</section>
+
+<!-- ================= PRODUCT CAROUSEL ================= -->
+<section class="product-carousel-section">
+    <h2>Trending Products</h2>
+    <div class="product-carousel">
+        <div class="carousel-track">
+            <div class="item">
+                <a href="{{ url_for('organic') }}"><img src="{{ url_for('static', filename='images/AS1.png') }}">
+                <p>Aloe Vera Soap</p></a>
+            </div>
+            <div class="item">
+                <a href="{{ url_for('handmade') }}"><img src="{{ url_for('static', filename='images/n8.jpg') }}">
+                <p>Handmade HandBag</p></a>
+            </div>
+            <div class="item">
+                <a href="{{ url_for('products') }}"><img src="{{ url_for('static', filename='images/ts5.jpeg') }}">
+                <p>T-Shirts</p></a>
+            </div>
+            <div class="item">
+                <a href="{{ url_for('handmade') }}"><img src="{{ url_for('static', filename='images/sre1.jpg') }}">
+                <p>Sarees</p></a>
+            </div>
+            <div class="item">
+                <a href="{{ url_for('organic') }}"><img src="{{ url_for('static', filename='images/mm1.jpeg') }}">
+                <p>Multani Face Pack</p></a>
+            </div>
+            <div class="item">
+                <a href="{{ url_for('handmade') }}"><img src="{{ url_for('static', filename='images/sre3.jpg') }}">
+                <p>Handmade Saree</p></a>
+            </div>
+            <div class="item">
+                <a href="{{ url_for('organic') }}"><img src="{{ url_for('static', filename='images/NS1.png') }}">
+                <p>Neem Shampoo</p></a>
+            </div>
+            <div class="item">
+                <a href="{{ url_for('products') }}"><img src="{{ url_for('static', filename='images/ts4.jpeg') }}">
+                <p>Fashion Tshirts</p></a>
+            </div>
+            <div class="item">
+                <a href="{{ url_for('organic') }}"><img src="{{ url_for('static', filename='images/ncsb1.avif') }}">
+                <p>Beauty Pack</p></a>
+            </div>
+        
+            <div class="item">
+                <a href="{{ url_for('products') }}"><img src="{{ url_for('static', filename='images/ts3.jpeg') }}">
+                <p>Black T-Shirts</p></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ================= PRODUCT GRID ================= -->
+<section class="products">
+    <h2>Our Popular Categories</h2>
+    <div class="product-grid">
+        <div class="product-box">
+            <a href="{{ url_for('handmade') }}"><img src="{{ url_for('static', filename='images/ncss1.jpeg') }}">
+            <h3>Handmade Craft</h3></a>
+        </div>
+        <div class="product-box">
+            <a href="{{ url_for('organic') }}"><img src="{{ url_for('static', filename='images/ncsb1.avif') }}">
+            <h3>Organic Beauty</h3></a>
+        </div>
+        <div class="product-box">
+           <a href="{{ url_for('products') }}"> <img src="{{ url_for('static', filename='images/ts2.jpeg') }}">
+            <h3>Fashion Items</h3></a>
+        </div>
+    </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<div class="footer">
+    <div class="row">
+        <div class="footer-col-1">
+            <h3>Download Our App</h3>
+            <p>Available on Android & iOS</p>
+            <div class="app-logo">
+                <img src="{{ url_for('static', filename='images/play-store.jpeg') }}">
+                <img src="{{ url_for('static', filename='images/app1-store.jpeg') }}">
+            </div>
+        </div>
+
+        <div class="footer-col-2">
+            <img src="{{ url_for('static', filename='logo.jpeg') }}">
+            <p>Bringing natural wellness closer to you.</p>
+        </div>
+
+        <div class="footer-col-3">
+            <h3>Useful Links</h3>
+            <ul>
+                <li>Coupons</li>
+                <li>Blog</li>
+                <li>Return Policy</li>
+                <li>Affiliate Program</li>
+            </ul>
+        </div>
+
+        <div class="footer-col-4">
+            <h3>Follow Us</h3>
+            <ul>
+                <li>Facebook</li>
+                <li>Instagram</li>
+                <li>YouTube</li>
+            </ul>
+        </div>
+    </div>
+
+    
+
+    <hr>
+    <p class="copyright">
+        © 2025 Nature Craft Store. All Rights Reserved.
+    </p>
+</div>
+
+<!-- ================= FLOATING CHAT ================= -->
+<div id="chatButton">💬 Chat</div>
+
+<div id="chatPopup">
+    <div class="chat-header">
+        <img src="{{ url_for('static', filename='logo.jpeg') }}">
+        Nature Craft Store
+        <button id="closeChat">✖</button>
+    </div>
+
+    <div class="chat-box" id="chatBox"></div>
+    <div class="chat-buttons" id="chatButtons"></div>
+
+    <div class="chat-input">
+        <input type="text" id="userMessage" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<!-- ================= JS ================= -->
+<script src="{{ url_for('static', filename='home.js') }}"></script>
+<script src="{{ url_for('static', filename='contact.js') }}"></script>
+
+</body>
+</html>

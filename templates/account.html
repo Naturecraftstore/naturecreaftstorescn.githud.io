@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account - Nature Craft Store</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='account.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='contact.css') }}">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <a href="{{ url_for('home') }}">
+            <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Logo">
+        </a>
+        Nature Craft Store
+    </div>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <ul class="nav-links" id="navLinks">
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li>
+                <a href="{{ url_for('cart') }}">🛒 Cart <span id="cart-count">0</span></a>
+            </li>
+</header>
+
+<div class="form-container">
+    <h2>Account Details</h2>
+
+    <!-- Display current details -->
+    <p><strong>Username:</strong> {{ user['username'] }}</p>
+    <p><strong>Phone:</strong> {{ user['phone'] }}</p>
+    <p><strong>Email:</strong> {{ user['email'] }}</p>
+    <p><strong>Date of Birth:</strong> {{ user['dob'] }}</p>
+    <p><strong>Gender:</strong> {{ user['gender'] }}</p>
+
+    <hr>
+
+ 
+
+<div class="action-buttons">
+    <a href="{{ url_for('edit_profile') }}">
+        <button class="btn">edit_profile</button>
+    </a>
+    <a href="{{ url_for('change_password') }}">
+        <button class="btn">change_password</button>
+    </a>
+    <a href="{{ url_for('order_history') }}">
+        <button class="btn">Orders</button>
+    </a>
+
+    <a href="{{ url_for('index') }}">
+        <button class="btn logout">Logout</button>
+    </a>
+</div>
+
+</div>
+
+<!-- ================= FLOATING CHAT ================= -->
+<div id="chatButton">💬 Chat</div>
+
+<div id="chatPopup">
+    <div class="chat-header">
+        <img src="{{ url_for('static', filename='logo.jpeg') }}">
+        Nature Craft Store
+        <button id="closeChat">✖</button>
+    </div>
+
+    <div class="chat-box" id="chatBox"></div>
+    <div class="chat-buttons" id="chatButtons"></div>
+
+    <div class="chat-input">
+        <input type="text" id="userMessage" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+<script src="{{ url_for('static', filename='account.js') }}"></script>
+<script src="{{ url_for('static', filename='contact.js') }}"></script>
+
+</body>
+</html>
