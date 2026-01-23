@@ -1,0 +1,139 @@
+/* ========== GENERAL ========== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f5f6f8;
+  color: #333;
+}
+
+/* ========== HEADER / LOGO ========== */
+header {
+  background: #2e7d32;
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+header .logo img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  margin-right: 10px;
+  object-fit: cover;
+}
+
+/* ========== FORM CONTAINER ========== */
+.form-container {
+  max-width: 500px;
+  margin: 30px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2e7d32;
+}
+
+/* ========== FORM ELEMENTS ========== */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+form input:focus,
+form select:focus {
+  border-color: #2e7d32;
+}
+
+form input[disabled] {
+  background: #f0f0f0;
+  color: #777;
+  cursor: not-allowed;
+}
+
+/* ========== BUTTON ========== */
+form button {
+  padding: 12px;
+  background: #2e7d32;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+form button:hover {
+  background: #1b4d28;
+  transform: scale(1.02);
+}
+
+/* ========== BACK LINK ========== */
+.form-container a {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  text-decoration: none;
+  color: #2e7d32;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.form-container a:hover {
+  color: #1b4d28;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 600px) {
+  .form-container {
+    margin: 20px;
+    padding: 20px;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  header .logo {
+    font-size: 18px;
+  }
+
+  header .logo img {
+    width: 40px;
+    height: 40px;
+  }
+
+  form button {
+    font-size: 15px;
+    padding: 10px;
+  }
+}
