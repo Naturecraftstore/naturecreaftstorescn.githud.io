@@ -671,7 +671,7 @@ def login():
 @app.route("/logout")
 def logout():
     session.clear()
-    flash("Logged out successfully")
+    # flash("Logged out successfully")
     return redirect(url_for("index"))
 
 # ================= LOGIN REQUIRED DECORATOR =================
@@ -838,6 +838,34 @@ def change_password():
         return redirect(url_for("account"))
 
     return render_template("change_password.html")
+@app.route('/coupons')
+def coupons():
+    coupons = [
+        {"title": "10% OFF", "desc": "Get 10% off on all products"},
+        {"title": "25% OFF", "desc": "Flat 25% discount on orders above ₹999"},
+        {"title": "Cashback Offer", "desc": "Get ₹100 cashback on UPI payments"}
+    ]
+    return render_template('coupons.html', coupons=coupons)
+@app.route('/coupons1')
+def coupons1():
+    coupons = [
+        {"title": "10% OFF", "desc": "Get 10% off on all products"},
+        {"title": "25% OFF", "desc": "Flat 25% discount on orders above ₹999"},
+        {"title": "Cashback Offer", "desc": "Get ₹100 cashback on UPI payments"}
+    ]
+    return render_template('coupons1.html', coupons=coupons)
+@app.route('/return-policy')
+def return_policy():
+    return render_template('return_policy.html')
+@app.route('/return-policy1')
+def return_policy1():
+    return render_template('return_policy1.html')
+@app.route('/affiliate-program')
+def affiliate_program():
+    return render_template('affiliate_program.html')
+@app.route('/affiliate-program1')
+def affiliate_program1():
+    return render_template('affiliate_program1.html')
 
 
 # ================= RUN =================
