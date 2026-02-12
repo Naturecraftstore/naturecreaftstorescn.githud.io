@@ -86,11 +86,23 @@
 <!-- BRANDS -->
 <div class="brands">
     <div class="row">
-        <img src="{{ url_for('static', filename='images/logo-goorej.jpeg') }}">
-        <img src="{{ url_for('static', filename='images/logo-oppo.jpeg') }}">
-        <img src="{{ url_for('static', filename='images/logo-coca.jpeg') }}">
-        <img src="{{ url_for('static', filename='images/logo-paypal.jpeg') }}">
-        <img src="{{ url_for('static', filename='images/logo-philips.jpeg') }}">
+        <a href="https://www.godrej.com/" target="_blank">
+    <img src="{{ url_for('static', filename='images/logo-goorej.jpeg') }}" alt="Godrej Logo">
+</a>
+        <a href="https://www.oppo.com/in/" target="_blank">
+    <img src="{{ url_for('static', filename='images/logo-oppo.jpeg') }}" alt="Oppo Logo">
+</a>
+
+        <a href="https://www.coca-cola.com/" target="_blank">
+    <img src="{{ url_for('static', filename='images/logo-coca.jpeg') }}" alt="Coca-Cola Logo">
+</a>
+        <a href="https://www.paypal.com/" target="_blank">
+    <img src="{{ url_for('static', filename='images/logo-paypal.jpeg') }}" alt="PayPal Logo">
+</a>
+        <a href="https://www.philips.co.in/" target="_blank">
+    <img src="{{ url_for('static', filename='images/logo-philips.jpeg') }}" alt="Philips Logo">
+</a>
+
     </div>
 </div>
 
@@ -102,8 +114,17 @@
             <h3>Download Our App</h3>
             <p>Available on Android & iOS</p>
             <div class="app-logo">
-                <img src="{{ url_for('static', filename='images/play-store.jpeg') }}">
-                <img src="{{ url_for('static', filename='images/app1-store.jpeg') }}">
+                <!--- <img src="{{ url_for('static', filename='images/play-store.jpeg') }}">
+                <img src="{{ url_for('static', filename='images/app1-store.jpeg') }}"> ---->
+                <a href="https://play.google.com/store/apps/details?id=YOUR.REAL.PACKAGE.NAME" target="_blank">
+    <img src="{{ url_for('static', filename='images/play-store.jpeg') }}" alt="Install Flick App">
+</a>
+
+
+
+                <a href="https://apps.apple.com/app/idXXXXXXXXXX" target="_blank">
+    <img src="{{ url_for('static', filename='images/app1-store.jpeg') }}" alt="Download on the App Store">
+</a>
             </div>
         </div>
 
@@ -115,19 +136,34 @@
         <div class="footer-col-3">
             <h3>Useful Links</h3>
             <ul>
-                <li>Coupons</li>
-                <li>Blog</li>
-                <li>Return Policy</li>
-                <li>Affiliate Program</li>
+                <li>
+    <a href="{{ url_for('coupons') }}">Coupons</a>
+</li>
+                
+                <li>
+    <a href="{{ url_for('return_policy') }}">Return Policy</a>
+</li>
+
+               <li>
+    <a href="{{ url_for('affiliate_program') }}">Affiliate Program</a>
+</li>
+
             </ul>
         </div>
 
         <div class="footer-col-4">
             <h3>Follow Us</h3>
             <ul>
-                <li>Facebook</li>
-                <li>Instagram</li>
-                <li>YouTube</li>
+                <li>
+    <a href="https://www.facebook.com" target="_blank">Facebook</a>
+</li>
+ <li>
+    <a href="https://www.instagram.com" target="_blank">Instagram</a>
+</li>
+<li>
+    <a href="https://www.YouTube.com" target="_blank">YouTube</a>
+</li>
+              
             </ul>
         </div>
 
