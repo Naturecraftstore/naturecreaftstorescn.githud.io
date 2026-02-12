@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coupons | Nature Craft Store</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='coupons.css') }}">
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div class="logo">
+        <a href="{{ url_for('index') }}">
+        <img src="{{ url_for('static', filename='logo.jpeg') }}" alt="Nature Craft Store Logo">
+        </a>
+        Nature Craft Store
+    </div>
+</div>
+
+<!-- Page Header -->
+<div class="page-header">
+    <h2>Available Coupons</h2>
+    <p>Save on your favorite handmade and eco-friendly products!</p>
+</div>
+
+<!-- Coupons Container -->
+<div class="coupon-container">
+    {% for coupon in coupons %}
+    <div class="coupon-card">
+        <div class="coupon-title">{{ coupon.title }}</div>
+        <div class="coupon-desc">{{ coupon.desc }}</div>
+        <div class="coupon-action">
+            <button>Apply</button>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+</body>
+</html>
